@@ -1,0 +1,304 @@
+- generic [active] [ref=e1]:
+  - complementary [ref=e2]:
+    - navigation [ref=e3]:
+      - link [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img [ref=e6]
+      - link [ref=e10] [cursor=pointer]:
+        - /url: /menu
+        - img [ref=e11]
+      - link [ref=e17] [cursor=pointer]:
+        - /url: /loyalty
+        - img [ref=e18]
+      - link [ref=e22] [cursor=pointer]:
+        - /url: /blog
+        - img [ref=e23]
+      - link [ref=e26] [cursor=pointer]:
+        - /url: /orders
+        - img [ref=e27]
+    - link [ref=e33] [cursor=pointer]:
+      - /url: /login
+      - img [ref=e34]
+  - main [ref=e37]:
+    - generic [ref=e38]:
+      - generic [ref=e44]:
+        - generic [ref=e45]:
+          - img [ref=e46]
+          - generic [ref=e48]: Authentic Wood-Fired Grill • Est. 2024
+        - heading "SPICE GRILL" [level=1] [ref=e49]:
+          - text: SPICE
+          - text: GRILL
+        - paragraph [ref=e50]: Bold flavors. Perfect flame. Unforgettable moments. Experience the art of premium wood-fired cooking.
+        - generic [ref=e51]:
+          - link "View Full Menu" [ref=e52] [cursor=pointer]:
+            - /url: /menu
+            - generic [ref=e53]: View Full Menu
+            - img [ref=e54]
+          - link "Make a Reservation" [ref=e56] [cursor=pointer]:
+            - /url: /reservations
+            - img [ref=e57]
+            - generic [ref=e59]: Make a Reservation
+        - generic [ref=e60]:
+          - generic [ref=e61]:
+            - img [ref=e62]
+            - generic [ref=e64]: "4.9"
+            - generic [ref=e65]: Google Rating
+          - generic [ref=e66]:
+            - img [ref=e67]
+            - generic [ref=e70]: 25 min
+            - generic [ref=e71]: Avg. Wait
+          - generic [ref=e72]:
+            - img [ref=e73]
+            - generic [ref=e76]: 10+ years
+            - generic [ref=e77]: Master Chefs
+      - generic [ref=e84]:
+        - generic [ref=e85]:
+          - img "Spice Grill Interior - Wood-fired kitchen" [ref=e87]
+          - generic [ref=e89]:
+            - generic [ref=e90]:
+              - img [ref=e91]
+              - generic [ref=e93]: Award-Winning
+            - paragraph [ref=e94]: Voted "Best Grill" 2024 by Food & Wine Magazine
+        - generic [ref=e95]:
+          - generic [ref=e96]: Our Story
+          - heading "Where Fire Meets Artistry" [level=2] [ref=e97]
+          - paragraph [ref=e98]: Founded on a passion for authentic wood-fired cooking, Spice Grill brings the primal essence of flame and smoke to modern dining. Our chefs have mastered the delicate balance between bold spices and delicate technique.
+          - paragraph [ref=e99]: Every cut of meat, every blend of spices, and every ember in our grill is chosen with intention. We don't just cook—we craft experiences that linger in memory long after the last bite.
+          - generic [ref=e100]:
+            - generic [ref=e101]:
+              - img [ref=e103]
+              - generic [ref=e105]: Wood-Fired Grill
+            - generic [ref=e106]:
+              - img [ref=e108]
+              - generic [ref=e111]: Premium Quality
+      - generic [ref=e113]:
+        - generic [ref=e114]:
+          - text: Explore
+          - heading "Our Culinary Categories" [level=2] [ref=e115]
+          - paragraph [ref=e116]: Discover the diverse flavors that define Spice Grill. Each category represents a unique approach to fire and spice.
+        - generic [ref=e117]:
+          - generic [ref=e118] [cursor=pointer]:
+            - img "Signature Grills" [ref=e119]
+            - generic [ref=e122]:
+              - generic [ref=e123]: 12 items
+              - heading "Signature Grills" [level=3] [ref=e124]
+              - paragraph [ref=e125]: Premium cuts flame-grilled to perfection
+          - generic [ref=e126] [cursor=pointer]:
+            - img "Spice Blends" [ref=e127]
+            - generic [ref=e130]:
+              - generic [ref=e131]: 8 items
+              - heading "Spice Blends" [level=3] [ref=e132]
+              - paragraph [ref=e133]: House-made seasonings and rubs
+          - generic [ref=e134] [cursor=pointer]:
+            - img "Smokehouse" [ref=e135]
+            - generic [ref=e138]:
+              - generic [ref=e139]: 10 items
+              - heading "Smokehouse" [level=3] [ref=e140]
+              - paragraph [ref=e141]: Wood-smoked specialties
+          - generic [ref=e142] [cursor=pointer]:
+            - img "Sides & Salads" [ref=e143]
+            - generic [ref=e146]:
+              - generic [ref=e147]: 15 items
+              - heading "Sides & Salads" [level=3] [ref=e148]
+              - paragraph [ref=e149]: Fresh accompaniments
+        - link "Browse Full Menu" [ref=e151] [cursor=pointer]:
+          - /url: /menu
+          - text: Browse Full Menu
+          - img [ref=e152]
+      - generic [ref=e155]:
+        - generic [ref=e156]:
+          - text: Chef's Selection
+          - heading "Featured Dishes" [level=2] [ref=e157]
+          - paragraph [ref=e158]: Hand-picked favorites from our executive chef. Must-try items that define the Spice Grill experience.
+        - generic [ref=e159]:
+          - generic [ref=e160]:
+            - img "Spice Grill Signature Ribeye" [ref=e162]
+            - generic [ref=e165]:
+              - generic [ref=e166]: Chef's Selection
+              - generic [ref=e167]:
+                - generic [ref=e168]:
+                  - heading "Spice Grill Signature Ribeye" [level=3] [ref=e169]
+                  - paragraph [ref=e170]: Prime 16oz ribeye with our house spice blend, char-grilled to your liking. Served with garlic mashed potatoes and seasonal vegetables.
+                - generic [ref=e172]: $42
+              - button "Add to Order" [ref=e173]
+          - generic [ref=e174]:
+            - img "Smoked Brisket Platter" [ref=e176]
+            - generic [ref=e179]:
+              - generic [ref=e180]:
+                - generic [ref=e181]:
+                  - heading "Smoked Brisket Platter" [level=3] [ref=e182]
+                  - paragraph [ref=e183]: 12-hour smoked brisket with pickled vegetables and garlic mash. Our signature dry rub creates a perfect bark.
+                - generic [ref=e185]: $34
+              - button "Add to Order" [ref=e186]
+          - generic [ref=e187]:
+            - img "Spice-Rubbed Chicken" [ref=e189]
+            - generic [ref=e192]:
+              - generic [ref=e193]:
+                - generic [ref=e194]:
+                  - heading "Spice-Rubbed Chicken" [level=3] [ref=e195]
+                  - paragraph [ref=e196]: Half chicken marinated in our secret blend, grilled over oak coals. Juicy, flavorful, and perfectly charred.
+                - generic [ref=e198]: $24
+              - button "Add to Order" [ref=e199]
+          - generic [ref=e200]:
+            - img "Cedar Plank Salmon" [ref=e202]
+            - generic [ref=e205]:
+              - generic [ref=e206]:
+                - generic [ref=e207]:
+                  - heading "Cedar Plank Salmon" [level=3] [ref=e208]
+                  - paragraph [ref=e209]: Atlantic salmon roasted on a cedar plank with a maple-bourbon glaze. Infused with deep woody aromas and smoky sweetness.
+                - generic [ref=e211]: $32
+              - button "Add to Order" [ref=e212]
+      - generic [ref=e214]:
+        - generic [ref=e215]:
+          - text: Testimonials
+          - heading "What Our Guests Say" [level=2] [ref=e216]
+        - generic [ref=e217]:
+          - generic [ref=e218]:
+            - img [ref=e220]
+            - generic [ref=e222]:
+              - img [ref=e223]
+              - img [ref=e225]
+              - img [ref=e227]
+              - img [ref=e229]
+              - img [ref=e231]
+            - paragraph [ref=e233]: “The depth of flavor at Spice Grill is unmatched. Every dish tells a story of passion and precision. The ribeye is simply perfection.”
+            - generic [ref=e234]:
+              - img "Michael Torres" [ref=e235]
+              - generic [ref=e236]:
+                - paragraph [ref=e237]: Michael Torres
+                - paragraph [ref=e238]: Food Critic
+          - generic [ref=e239]:
+            - img [ref=e241]
+            - generic [ref=e243]:
+              - img [ref=e244]
+              - img [ref=e246]
+              - img [ref=e248]
+              - img [ref=e250]
+              - img [ref=e252]
+            - paragraph [ref=e254]: “An incredible dining experience from start to finish. The ambiance, service, and food come together perfectly. My go-to spot for celebrations.”
+            - generic [ref=e255]:
+              - img "Sarah Chen" [ref=e256]
+              - generic [ref=e257]:
+                - paragraph [ref=e258]: Sarah Chen
+                - paragraph [ref=e259]: Regular Diner
+          - generic [ref=e260]:
+            - img [ref=e262]
+            - generic [ref=e264]:
+              - img [ref=e265]
+              - img [ref=e267]
+              - img [ref=e269]
+              - img [ref=e271]
+              - img [ref=e273]
+            - paragraph [ref=e275]: “As a chef myself, I'm exceptionally picky about where I eat. Spice Grill surpasses all expectations. The attention to detail is remarkable.”
+            - generic [ref=e276]:
+              - img "James Wilson" [ref=e277]
+              - generic [ref=e278]:
+                - paragraph [ref=e279]: James Wilson
+                - paragraph [ref=e280]: Local Chef
+      - generic [ref=e283]:
+        - text: Join Us
+        - heading "Reserve Your Table" [level=2] [ref=e284]
+        - paragraph [ref=e285]: Whether it's a special occasion or a casual evening, we promise an unforgettable dining experience. Book your table today.
+        - generic [ref=e286]:
+          - link "Make Reservation" [ref=e287] [cursor=pointer]:
+            - /url: /reservations
+            - img [ref=e288]
+            - generic [ref=e290]: Make Reservation
+          - 'link "Call Us: (555) 123-4567" [ref=e291] [cursor=pointer]':
+            - /url: tel:+15551234567
+            - img [ref=e292]
+            - generic [ref=e294]: "Call Us: (555) 123-4567"
+      - generic [ref=e297]:
+        - generic [ref=e298]:
+          - text: Contact
+          - heading "Visit Us" [level=2] [ref=e299]
+          - generic [ref=e300]:
+            - generic [ref=e301]:
+              - img [ref=e303]
+              - generic [ref=e306]:
+                - heading "Location" [level=4] [ref=e307]
+                - paragraph [ref=e308]:
+                  - text: 123 Grill Street
+                  - text: New York, NY 10001
+            - generic [ref=e309]:
+              - img [ref=e311]
+              - generic [ref=e313]:
+                - heading "Phone" [level=4] [ref=e314]
+                - paragraph [ref=e315]:
+                  - text: (555) 123-4567
+                  - text: (555) 987-6543
+            - generic [ref=e316]:
+              - img [ref=e318]
+              - generic [ref=e321]:
+                - heading "Email" [level=4] [ref=e322]
+                - paragraph [ref=e323]:
+                  - text: hello@spicegrill.com
+                  - text: reservations@spicegrill.com
+        - generic [ref=e324]:
+          - heading "Hours of Operation" [level=3] [ref=e325]
+          - generic [ref=e326]:
+            - generic [ref=e327]:
+              - generic [ref=e328]: Monday - Thursday
+              - generic [ref=e329]: 11:30 AM - 10:00 PM
+            - generic [ref=e330]:
+              - generic [ref=e331]: Friday - Saturday
+              - generic [ref=e332]: 11:30 AM - 11:00 PM
+            - generic [ref=e333]:
+              - generic [ref=e334]: Sunday
+              - generic [ref=e335]: 12:00 PM - 9:00 PM
+          - generic [ref=e336]:
+            - generic [ref=e337]:
+              - img [ref=e338]
+              - generic [ref=e340]: Happy Hour
+            - paragraph [ref=e341]: "Mon-Fri 4-6PM: 20% off all drinks & appetizers"
+      - generic [ref=e343]:
+        - generic [ref=e344]:
+          - generic [ref=e345]:
+            - heading "SPICEGRILL" [level=3] [ref=e346]
+            - paragraph [ref=e347]: Wood-fired perfection since 2024.
+            - generic [ref=e348]:
+              - link "Ig" [ref=e349] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e350]: Ig
+              - link "Fb" [ref=e351] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e352]: Fb
+              - link "Tw" [ref=e353] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e354]: Tw
+          - generic [ref=e355]:
+            - heading "Quick Links" [level=4] [ref=e356]
+            - list [ref=e357]:
+              - listitem [ref=e358]:
+                - link "Menu" [ref=e359] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e360]:
+                - link "Reservations" [ref=e361] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e362]:
+                - link "Catering" [ref=e363] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e364]:
+                - link "Gift Cards" [ref=e365] [cursor=pointer]:
+                  - /url: "#"
+          - generic [ref=e366]:
+            - heading "Legal" [level=4] [ref=e367]
+            - list [ref=e368]:
+              - listitem [ref=e369]:
+                - link "Privacy Policy" [ref=e370] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e371]:
+                - link "Terms of Service" [ref=e372] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e373]:
+                - link "Accessibility" [ref=e374] [cursor=pointer]:
+                  - /url: "#"
+          - generic [ref=e375]:
+            - heading "Stay Updated" [level=4] [ref=e376]
+            - paragraph [ref=e377]: Get exclusive offers and updates.
+            - generic [ref=e378]:
+              - textbox "Your email" [ref=e379]
+              - button [ref=e380]:
+                - img [ref=e381]
+        - paragraph [ref=e384]: © 2026 Spice Grill. All rights reserved.
+  - alert [ref=e385]

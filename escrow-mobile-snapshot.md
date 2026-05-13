@@ -1,0 +1,174 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link "EscrowHub" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img [ref=e7]
+        - generic [ref=e9]: EscrowHub
+      - navigation [ref=e10]:
+        - link "Mall" [ref=e218] [cursor=pointer]:
+          - /url: /stores
+        - link "Products" [ref=e219] [cursor=pointer]:
+          - /url: /products
+        - link "Sign In" [ref=e13] [cursor=pointer]:
+          - /url: /login
+        - button "Toggle theme" [ref=e14] [cursor=pointer]:
+          - img [ref=e15]
+  - main [ref=e17]:
+    - generic [ref=e18]:
+      - generic [ref=e23]:
+        - generic [ref=e24]: Secure Escrow Marketplace
+        - heading "Buy & Sell with Confidence" [level=1] [ref=e26]:
+          - text: Buy & Sell with
+          - generic [ref=e27]: Confidence
+        - paragraph [ref=e28]: Your funds are protected in escrow until both parties are satisfied. Shop safely with verified sellers.
+        - generic [ref=e29]:
+          - link "Shop Now" [ref=e30] [cursor=pointer]:
+            - /url: /products
+            - img [ref=e31]
+            - text: Shop Now
+          - link "Create Account" [ref=e33] [cursor=pointer]:
+            - /url: /signup
+            - img [ref=e34]
+            - text: Create Account
+      - generic [ref=e64]:
+        - link "Digital Shop now" [ref=e65] [cursor=pointer]:
+          - /url: /products?search=Digital
+          - img [ref=e67]
+          - generic [ref=e69]:
+            - heading "Digital" [level=3] [ref=e70]
+            - paragraph [ref=e71]: Shop now
+        - link "Physical Shop now" [ref=e72] [cursor=pointer]:
+          - /url: /products?search=Physical
+          - img [ref=e74]
+          - generic [ref=e76]:
+            - heading "Physical" [level=3] [ref=e77]
+            - paragraph [ref=e78]: Shop now
+        - link "Services Shop now" [ref=e79] [cursor=pointer]:
+          - /url: /products?search=Services
+          - img [ref=e81]
+          - generic [ref=e83]:
+            - heading "Services" [level=3] [ref=e84]
+            - paragraph [ref=e85]: Shop now
+      - generic [ref=e87]:
+        - generic [ref=e89]:
+          - heading "Featured Products" [level=2] [ref=e90]
+          - paragraph [ref=e91]: Discover trending items from our marketplace
+        - generic [ref=e95]:
+          - link "htjdyufju View htjdyufju $123455.99 -135" [ref=e96] [cursor=pointer]:
+            - /url: /products/2ef43ade-3bf1-4496-9687-52b38712e6f6
+            - generic [ref=e97]:
+              - img "htjdyufju" [ref=e98]
+              - generic [ref=e100]: View
+            - generic [ref=e101]:
+              - heading "htjdyufju" [level=3] [ref=e102]
+              - generic [ref=e103]:
+                - generic [ref=e104]: $123455.99
+                - generic [ref=e105]:
+                  - img [ref=e106]
+                  - text: "-135"
+          - link "picture View picture $500 0" [ref=e108] [cursor=pointer]:
+            - /url: /products/f4409edd-a7dc-4182-9b15-7876a4cc8214
+            - generic [ref=e109]:
+              - img "picture" [ref=e110]
+              - generic [ref=e112]: View
+            - generic [ref=e113]:
+              - heading "picture" [level=3] [ref=e114]
+              - generic [ref=e115]:
+                - generic [ref=e116]: $500
+                - text: "0"
+          - link "123 View 123 $123 -135" [ref=e117] [cursor=pointer]:
+            - /url: /products/e2014645-8d66-4a7c-8609-1f30f45296db
+            - generic [ref=e118]:
+              - img "123" [ref=e119]
+              - generic [ref=e121]: View
+            - generic [ref=e122]:
+              - heading "123" [level=3] [ref=e123]
+              - generic [ref=e124]:
+                - generic [ref=e125]: $123
+                - generic [ref=e126]:
+                  - img [ref=e127]
+                  - text: "-135"
+          - link "AI Prompt View AI Prompt $120 20" [ref=e129] [cursor=pointer]:
+            - /url: /products/ed4e87c0-5f3d-44fa-9c58-3aa4deaf0a70
+            - generic [ref=e130]:
+              - img "AI Prompt" [ref=e131]
+              - generic [ref=e133]: View
+            - generic [ref=e134]:
+              - heading "AI Prompt" [level=3] [ref=e135]
+              - generic [ref=e136]:
+                - generic [ref=e137]: $120
+                - generic [ref=e138]:
+                  - img [ref=e139]
+                  - text: "20"
+          - link "wall paper View wall paper $10000 -135" [ref=e141] [cursor=pointer]:
+            - /url: /products/56a891da-567f-4f51-b955-052b844fad97
+            - generic [ref=e142]:
+              - img "wall paper" [ref=e143]
+              - generic [ref=e145]: View
+            - generic [ref=e146]:
+              - heading "wall paper" [level=3] [ref=e147]
+              - generic [ref=e148]:
+                - generic [ref=e149]: $10000
+                - generic [ref=e150]:
+                  - img [ref=e151]
+                  - text: "-135"
+          - link "banana View banana $300 -135" [ref=e153] [cursor=pointer]:
+            - /url: /products/19d99970-cd45-4d0e-bf16-d7929ae80a4d
+            - generic [ref=e154]:
+              - img "banana" [ref=e155]
+              - generic [ref=e157]: View
+            - generic [ref=e158]:
+              - heading "banana" [level=3] [ref=e159]
+              - generic [ref=e160]:
+                - generic [ref=e161]: $300
+                - generic [ref=e162]:
+                  - img [ref=e163]
+                  - text: "-135"
+        - link "View All Products" [ref=e221] [cursor=pointer]:
+          - /url: /products
+      - generic [ref=e166]:
+        - generic [ref=e167]:
+          - heading "How EscrowHub Works" [level=2] [ref=e168]
+          - paragraph [ref=e169]: Shop with confidence using our secure escrow system
+        - generic [ref=e170]:
+          - generic [ref=e171]:
+            - generic [ref=e172]: "01"
+            - heading "Find Product" [level=3] [ref=e173]
+            - paragraph [ref=e174]: Browse thousands of products from verified sellers
+          - generic [ref=e175]:
+            - generic [ref=e176]: "02"
+            - heading "Pay Securely" [level=3] [ref=e177]
+            - paragraph [ref=e178]: Your payment is held in escrow until delivery confirmed
+          - generic [ref=e179]:
+            - generic [ref=e180]: "03"
+            - heading "Receive Item" [level=3] [ref=e181]
+            - paragraph [ref=e182]: Seller delivers the product to you
+          - generic [ref=e183]:
+            - generic [ref=e184]: "04"
+            - heading "Release Payment" [level=3] [ref=e185]
+            - paragraph [ref=e186]: Confirm receipt and funds are released to seller
+      - generic [ref=e189]:
+        - heading "Ready to get started?" [level=2] [ref=e190]
+        - paragraph [ref=e191]: Join thousands of buyers and sellers who trust EscrowHub for secure transactions. Create your free account today.
+        - generic [ref=e192]:
+          - link "Create Free Account" [ref=e193] [cursor=pointer]:
+            - /url: /signup
+          - link "Browse Products" [ref=e194] [cursor=pointer]:
+            - /url: /products
+      - generic [ref=e197]:
+        - generic [ref=e198]:
+          - img [ref=e199]
+          - generic [ref=e201]: Buyer Protection
+        - generic [ref=e202]:
+          - img [ref=e203]
+          - generic [ref=e205]: Secure Payments
+        - generic [ref=e206]:
+          - img [ref=e207]
+          - generic [ref=e209]: Dispute Resolution
+        - generic [ref=e210]:
+          - img [ref=e211]
+          - generic [ref=e213]: Verified Sellers
+  - button [ref=e214] [cursor=pointer]:
+    - img [ref=e215]
+  - alert [ref=e217]

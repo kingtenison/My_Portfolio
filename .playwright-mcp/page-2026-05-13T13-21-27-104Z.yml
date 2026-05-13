@@ -1,0 +1,13 @@
+- generic [ref=e2]:
+  - heading "Free Image Background Remover" [level=1] [ref=e3]
+  - paragraph [ref=e4]: Using Remove.bg API (50 free images/month)
+  - generic [ref=e7]:
+    - img "Upload" [ref=e8]
+    - paragraph [ref=e9]: Click to upload an image
+    - paragraph [ref=e10]: (JPG, PNG, max 5MB)
+  - generic [ref=e12]:
+    - paragraph [ref=e13]:
+      - text: Powered by
+      - link "Remove.bg API" [ref=e14] [cursor=pointer]:
+        - /url: https://www.remove.bg/api
+    - paragraph [ref=e15]: "Free limit: 50 images per month"

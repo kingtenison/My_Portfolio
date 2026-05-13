@@ -1,0 +1,218 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "FileForge" [ref=e5] [cursor=pointer]:
+          - /url: /
+        - navigation [ref=e6]:
+          - link "Images" [ref=e7] [cursor=pointer]:
+            - /url: "#image-tools"
+          - link "Documents" [ref=e8] [cursor=pointer]:
+            - /url: "#document-tools"
+          - link "How It Works" [ref=e9] [cursor=pointer]:
+            - /url: "#how-it-works"
+          - link "FAQ" [ref=e10] [cursor=pointer]:
+            - /url: "#faq"
+    - main [ref=e11]:
+      - generic [ref=e12]:
+        - heading "Convert files instantly" [level=1] [ref=e13]
+        - paragraph [ref=e14]: Fast, free file conversion. Your files never leave your device for image converters. Secure document processing with leading APIs.
+        - generic [ref=e15]:
+          - generic [ref=e16]:
+            - img [ref=e18]
+            - generic [ref=e23]:
+              - generic [ref=e24]: "12"
+              - generic [ref=e25]: Converters
+          - generic [ref=e26]:
+            - img [ref=e28]
+            - generic [ref=e30]:
+              - generic [ref=e31]: 10MB
+              - generic [ref=e32]: Max File Size
+          - generic [ref=e33]:
+            - img [ref=e35]
+            - generic [ref=e37]:
+              - generic [ref=e38]: 100%
+              - generic [ref=e39]: Free Forever
+          - generic [ref=e40]:
+            - img [ref=e42]
+            - generic [ref=e44]:
+              - generic [ref=e45]: "500"
+              - generic [ref=e46]: API Credits
+      - iframe [ref=e49]:
+        
+      - generic [ref=e50]:
+        - generic [ref=e51]:
+          - img [ref=e53]
+          - generic [ref=e57]:
+            - heading "Image Converters" [level=2] [ref=e58]
+            - paragraph [ref=e59]: Convert & compress images directly in your browser
+          - generic [ref=e60]: Client-side
+        - generic [ref=e61]:
+          - link "Image Compress JPG → JPG → Reduce image file size while maintaining quality." [ref=e62] [cursor=pointer]:
+            - /url: /tools/image-compress
+            - generic [ref=e63]:
+              - generic [ref=e64]:
+                - generic [ref=e65]: Image Compress
+                - generic [ref=e66]: JPG → JPG
+              - generic [ref=e67]: →
+            - paragraph [ref=e68]: Reduce image file size while maintaining quality.
+          - link "JPG to WebP JPG → WEBP → Convert JPG to WebP for smaller file sizes." [ref=e69] [cursor=pointer]:
+            - /url: /tools/jpg-to-webp
+            - generic [ref=e70]:
+              - generic [ref=e71]:
+                - generic [ref=e72]: JPG to WebP
+                - generic [ref=e73]: JPG → WEBP
+              - generic [ref=e74]: →
+            - paragraph [ref=e75]: Convert JPG to WebP for smaller file sizes.
+          - link "WebP to JPG WEBP → JPG → Convert WebP to JPG for better compatibility." [ref=e76] [cursor=pointer]:
+            - /url: /tools/webp-to-jpg
+            - generic [ref=e77]:
+              - generic [ref=e78]:
+                - generic [ref=e79]: WebP to JPG
+                - generic [ref=e80]: WEBP → JPG
+              - generic [ref=e81]: →
+            - paragraph [ref=e82]: Convert WebP to JPG for better compatibility.
+          - link "PNG to JPG PNG → JPG → Convert PNG images to JPG format." [ref=e83] [cursor=pointer]:
+            - /url: /tools/png-to-jpg
+            - generic [ref=e84]:
+              - generic [ref=e85]:
+                - generic [ref=e86]: PNG to JPG
+                - generic [ref=e87]: PNG → JPG
+              - generic [ref=e88]: →
+            - paragraph [ref=e89]: Convert PNG images to JPG format.
+          - link "JPG to PNG JPG → PNG → Convert JPG to PNG with transparency support." [ref=e90] [cursor=pointer]:
+            - /url: /tools/jpg-to-png
+            - generic [ref=e91]:
+              - generic [ref=e92]:
+                - generic [ref=e93]: JPG to PNG
+                - generic [ref=e94]: JPG → PNG
+              - generic [ref=e95]: →
+            - paragraph [ref=e96]: Convert JPG to PNG with transparency support.
+          - link "PNG to WebP PNG → WEBP → Convert PNG to WebP for web optimization." [ref=e97] [cursor=pointer]:
+            - /url: /tools/png-to-webp
+            - generic [ref=e98]:
+              - generic [ref=e99]:
+                - generic [ref=e100]: PNG to WebP
+                - generic [ref=e101]: PNG → WEBP
+              - generic [ref=e102]: →
+            - paragraph [ref=e103]: Convert PNG to WebP for web optimization.
+      - generic [ref=e104]:
+        - generic [ref=e105]:
+          - img [ref=e107]
+          - generic [ref=e110]:
+            - heading "Document Converters" [level=2] [ref=e111]
+            - paragraph [ref=e112]: Convert Word, Excel, PowerPoint, PDF & more
+          - generic [ref=e113]: API Powered
+        - generic [ref=e114]:
+          - link "Word to PDF DOC → PDF → Convert Word documents (DOC, DOCX) to PDF format." [ref=e115] [cursor=pointer]:
+            - /url: /tools/word-to-pdf
+            - generic [ref=e116]:
+              - generic [ref=e117]:
+                - generic [ref=e118]: Word to PDF
+                - generic [ref=e119]: DOC → PDF
+              - generic [ref=e120]: →
+            - paragraph [ref=e121]: Convert Word documents (DOC, DOCX) to PDF format.
+          - link "PDF to Word PDF → DOCX → Convert PDF documents to editable Word files." [ref=e122] [cursor=pointer]:
+            - /url: /tools/pdf-to-word
+            - generic [ref=e123]:
+              - generic [ref=e124]:
+                - generic [ref=e125]: PDF to Word
+                - generic [ref=e126]: PDF → DOCX
+              - generic [ref=e127]: →
+            - paragraph [ref=e128]: Convert PDF documents to editable Word files.
+          - link "Excel to PDF XLS → PDF → Convert Excel spreadsheets to PDF documents." [ref=e129] [cursor=pointer]:
+            - /url: /tools/excel-to-pdf
+            - generic [ref=e130]:
+              - generic [ref=e131]:
+                - generic [ref=e132]: Excel to PDF
+                - generic [ref=e133]: XLS → PDF
+              - generic [ref=e134]: →
+            - paragraph [ref=e135]: Convert Excel spreadsheets to PDF documents.
+          - link "PPT to PDF PPT → PDF → Convert PowerPoint presentations to PDF." [ref=e136] [cursor=pointer]:
+            - /url: /tools/ppt-to-pdf
+            - generic [ref=e137]:
+              - generic [ref=e138]:
+                - generic [ref=e139]: PPT to PDF
+                - generic [ref=e140]: PPT → PDF
+              - generic [ref=e141]: →
+            - paragraph [ref=e142]: Convert PowerPoint presentations to PDF.
+          - link "Text to PDF TXT → PDF → Convert plain text files to PDF format." [ref=e143] [cursor=pointer]:
+            - /url: /tools/txt-to-pdf
+            - generic [ref=e144]:
+              - generic [ref=e145]:
+                - generic [ref=e146]: Text to PDF
+                - generic [ref=e147]: TXT → PDF
+              - generic [ref=e148]: →
+            - paragraph [ref=e149]: Convert plain text files to PDF format.
+          - link "PDF Compress PDF → PDF → Reduce PDF file size while preserving quality." [ref=e150] [cursor=pointer]:
+            - /url: /tools/pdf-compress
+            - generic [ref=e151]:
+              - generic [ref=e152]:
+                - generic [ref=e153]: PDF Compress
+                - generic [ref=e154]: PDF → PDF
+              - generic [ref=e155]: →
+            - paragraph [ref=e156]: Reduce PDF file size while preserving quality.
+      - generic [ref=e157]:
+        - heading "How It Works" [level=2] [ref=e158]
+        - list [ref=e161]:
+          - listitem [ref=e162]:
+            - generic [ref=e163]: "1"
+            - generic [ref=e164]:
+              - generic [ref=e165]: Choose Your Converter
+              - generic [ref=e166]: Select from 12+ available converters for images or documents. Browse by category or search for the format you need.
+          - listitem [ref=e167]:
+            - generic [ref=e168]: "2"
+            - generic [ref=e169]:
+              - generic [ref=e170]: Upload Your File
+              - generic [ref=e171]: Drag and drop your file or click to browse. Maximum file size is 10MB. For images, processing happens instantly in your browser.
+          - listitem [ref=e172]:
+            - generic [ref=e173]: "3"
+            - generic [ref=e174]:
+              - generic [ref=e175]: Automatic Conversion
+              - generic [ref=e176]: Image conversions complete in milliseconds. Document conversions are processed through secure APIs and typically take a few seconds.
+          - listitem [ref=e177]:
+            - generic [ref=e178]: "4"
+            - generic [ref=e179]:
+              - generic [ref=e180]: Download Converted File
+              - generic [ref=e181]: Your converted file is ready instantly. Click download to save it to your device. No registration or waiting required.
+      - generic [ref=e182]:
+        - heading "Why Use FileForge?" [level=2] [ref=e183]
+        - paragraph [ref=e186]:
+          - generic [ref=e187]: "Lightning Fast Performance: Image conversions happen instantly in your browser with zero server delay. Document conversions use fast, reliable APIs that process files in seconds."
+          - generic [ref=e188]: "100% Private & Secure: Your image files never leave your device - all processing happens locally in your browser. Document conversions use enterprise-grade secure APIs that automatically delete files after processing."
+          - generic [ref=e189]: "No Registration Required: Use all converters instantly without creating an account. No email, no password, no signup process. Just open and convert."
+          - generic [ref=e190]: "Works On Every Device: Access FileForge from desktop, tablet, or mobile. Responsive design ensures a perfect experience on any screen size."
+          - generic [ref=e191]: "Completely Free Forever: No hidden fees, no subscriptions, no premium tiers. Image converters are unlimited. Document converters include 500 free API credits that never expire."
+          - generic [ref=e192]: "12+ Format Support: Convert between JPG, PNG, WebP, GIF, PDF, DOCX, XLSX, PPTX, TXT, and more. All major formats supported with high-quality output."
+      - generic [ref=e193]:
+        - heading "Frequently Asked Questions" [level=2] [ref=e194]
+        - generic [ref=e195]:
+          - generic [ref=e196]:
+            - generic [ref=e197]: Is FileForge really free?
+            - generic [ref=e198]: Yes! FileForge is completely free to use. No registration, no subscription, no hidden fees. Ever.
+          - generic [ref=e199]:
+            - generic [ref=e200]: Are my files secure?
+            - generic [ref=e201]: Absolutely. Image conversions happen entirely in your browser - your files never leave your device. Document conversions use secure, enterprise-grade APIs that automatically delete files after processing.
+          - generic [ref=e202]:
+            - generic [ref=e203]: What is the file size limit?
+            - generic [ref=e204]: The maximum file size is 10MB per conversion. This ensures fast processing for everyone.
+          - generic [ref=e205]:
+            - generic [ref=e206]: What image formats are supported?
+            - generic [ref=e207]: We support JPG, PNG, WebP, and GIF for image conversions. This includes converting between any of these formats plus compression.
+          - generic [ref=e208]:
+            - generic [ref=e209]: What document formats are supported?
+            - generic [ref=e210]: We support Word (DOC, DOCX), Excel (XLS, XLSX), PowerPoint (PPT, PPTX), PDF, and plain text (TXT).
+          - generic [ref=e211]:
+            - generic [ref=e212]: Do I need to create an account?
+            - generic [ref=e213]: No! You can use all converters instantly without any registration. Just upload your file and convert.
+          - generic [ref=e214]:
+            - generic [ref=e215]: How do document converters work?
+            - generic [ref=e216]: Document converters use the Convert.FAST API - a fast, secure conversion service. Files are processed on their servers and automatically deleted after conversion.
+          - generic [ref=e217]:
+            - generic [ref=e218]: How many conversions can I do?
+            - generic [ref=e219]: Image converters are unlimited (client-side). Document converters have 500 free API credits that never expire - enough for thousands of conversions per month.
+    - contentinfo [ref=e220]:
+      - generic [ref=e221]:
+        - paragraph [ref=e222]: © 2026 FileForge - Free Online File Converter
+        - paragraph [ref=e223]: All rights reserved. Built by Built by =[ØVĒRKĪLL]= TECHNOLOGIES
+  - alert [ref=e224]

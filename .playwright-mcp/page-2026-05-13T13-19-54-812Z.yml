@@ -1,0 +1,777 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link "New Vision Dental" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "New Vision Dental" [ref=e7]
+      - navigation [ref=e8]:
+        - link "Home" [ref=e9] [cursor=pointer]:
+          - /url: /
+          - text: Home
+        - link "Services" [ref=e10] [cursor=pointer]:
+          - /url: /services
+          - text: Services
+        - link "Gallery" [ref=e11] [cursor=pointer]:
+          - /url: /gallery
+          - text: Gallery
+        - link "About" [ref=e12] [cursor=pointer]:
+          - /url: /about
+          - text: About
+        - link "Blog" [ref=e13] [cursor=pointer]:
+          - /url: /blog
+          - text: Blog
+        - button "Contact" [ref=e15] [cursor=pointer]: Contact
+      - generic [ref=e17]:
+        - link "Log in" [ref=e18] [cursor=pointer]:
+          - /url: /login
+        - link "Book Now" [ref=e19] [cursor=pointer]:
+          - /url: /book
+          - generic [ref=e20]: Book Now
+  - main [ref=e21]:
+    - generic [ref=e22]:
+      - img "New Vision Dental Premium Care" [ref=e24]
+      - generic [ref=e29]:
+        - heading "One of the Best Dental Clinic in Ghana" [level=1] [ref=e31]:
+          - generic [ref=e34]: One of the Best
+          - generic [ref=e35]: Dental Clinic
+          - generic [ref=e36]: in Ghana
+        - paragraph [ref=e37]: Expert dentists, transparent pricing, and uncompromising comfort. Experience world-class dental care in a luxury environment.
+        - generic [ref=e38]:
+          - link "Book Your Visit" [ref=e40] [cursor=pointer]:
+            - /url: /book
+            - generic [ref=e41]:
+              - text: Book Your Visit
+              - img [ref=e42]
+          - link "Explore Services" [ref=e45] [cursor=pointer]:
+            - /url: /services
+            - img [ref=e46]
+            - generic [ref=e48]: Explore Services
+        - generic [ref=e49]:
+          - generic [ref=e50]:
+            - paragraph [ref=e51]: 2.5K+
+            - paragraph [ref=e52]: Happy Patients
+          - generic [ref=e53]:
+            - paragraph [ref=e54]:
+              - text: "4.9"
+              - img [ref=e55]
+            - paragraph [ref=e57]: Rating
+          - generic [ref=e58]:
+            - paragraph [ref=e59]: 15+
+            - paragraph [ref=e60]: Years Experience
+      - generic [ref=e61]:
+        - generic [ref=e62]: Scroll
+        - img [ref=e64]
+    - generic [ref=e66]:
+      - generic [ref=e72]:
+        - generic [ref=e73]:
+          - img [ref=e74]
+          - generic [ref=e77]: Why Choose Us
+        - generic [ref=e78]: The Gold Standard in Dental Care
+      - generic [ref=e80]:
+        - generic [ref=e81]:
+          - generic [ref=e82]:
+            - heading "Excellence Redefined in Every Detail." [level=2] [ref=e83]:
+              - text: Excellence
+              - text: Redefined
+              - text: in Every
+              - text: Detail.
+            - paragraph [ref=e84]: At New Vision Dental, every appointment is crafted to deliver a premium, stress-free experience that sets a new benchmark for dental care.
+            - generic [ref=e85]:
+              - generic [ref=e86]:
+                - img [ref=e87]
+                - generic [ref=e90]: No Hidden Fees
+              - generic [ref=e91]:
+                - img [ref=e92]
+                - generic [ref=e95]: Insurance Accepted
+              - generic [ref=e96]:
+                - img [ref=e97]
+                - generic [ref=e100]: Weekend Availability
+              - generic [ref=e101]:
+                - img [ref=e102]
+                - generic [ref=e105]: Flexible Payments
+              - generic [ref=e106]:
+                - img [ref=e107]
+                - generic [ref=e110]: Personalized Plans
+              - generic [ref=e111]:
+                - img [ref=e112]
+                - generic [ref=e115]: Pain-Free Techniques
+          - link "Book Appointment" [ref=e117] [cursor=pointer]:
+            - /url: /book
+            - text: Book Appointment
+            - img [ref=e118]
+        - generic [ref=e120]:
+          - generic [ref=e121]:
+            - generic: "01"
+            - img [ref=e123]
+            - generic [ref=e126]:
+              - heading "Elite Clinical Excellence" [level=4] [ref=e127]
+              - paragraph [ref=e128]: Board-certified specialists delivering world-class dental care with 20+ years of proven expertise.
+            - img [ref=e130]
+          - generic [ref=e132]:
+            - generic: "02"
+            - img [ref=e134]
+            - generic [ref=e136]:
+              - heading "Advanced Bio-Safety" [level=4] [ref=e137]
+              - paragraph [ref=e138]: Hospital-grade sterilization and cutting-edge diagnostics for your complete peace of mind.
+            - img [ref=e140]
+          - generic [ref=e142]:
+            - generic: "03"
+            - img [ref=e144]
+            - generic [ref=e147]:
+              - heading "On-Demand Concierge" [level=4] [ref=e148]
+              - paragraph [ref=e149]: Same-day emergency slots, evening hours, and 24/7 online booking at 3 convenient locations.
+            - img [ref=e151]
+          - generic [ref=e153]:
+            - generic: "04"
+            - img [ref=e155]
+            - generic [ref=e157]:
+              - heading "Luxury Comfort Care" [level=4] [ref=e158]
+              - paragraph [ref=e159]: A spa-like sanctuary with sedation options and premium amenities for a stress-free experience.
+            - img [ref=e161]
+    - generic [ref=e164]:
+      - generic [ref=e169]:
+        - generic [ref=e170]:
+          - img [ref=e171]
+          - text: What We Offer
+        - heading "Our Premium Services" [level=2] [ref=e174]:
+          - text: Our Premium
+          - generic [ref=e175]: Services
+      - generic [ref=e177]:
+        - generic [ref=e178]:
+          - generic [ref=e179]:
+            - img "Scaling & Polishing" [ref=e180]
+            - generic [ref=e181]:
+              - img [ref=e182]
+              - generic [ref=e184]: "4.9"
+            - generic [ref=e185]: "01"
+          - generic [ref=e186]:
+            - heading "Scaling & Polishing" [level=3] [ref=e187]
+            - list [ref=e189]:
+              - listitem [ref=e190]:
+                - img [ref=e192]
+                - generic [ref=e194]: Removes plaque and tartar buildup
+              - listitem [ref=e195]:
+                - img [ref=e197]
+                - generic [ref=e199]: Polishes teeth for a smooth finish
+              - listitem [ref=e200]:
+                - img [ref=e202]
+                - generic [ref=e204]: Prevents gum disease and decay
+            - generic [ref=e205]:
+              - generic [ref=e206]:
+                - img [ref=e207]
+                - text: 45 Mins
+              - generic [ref=e210]:
+                - img [ref=e211]
+                - text: 900+ patients
+            - generic [ref=e216]:
+              - link "Book Now" [ref=e217] [cursor=pointer]:
+                - /url: /book
+              - link "Learn More" [ref=e218] [cursor=pointer]:
+                - /url: /services/scaling-polishing
+                - text: Learn More
+                - img [ref=e219]
+        - generic [ref=e221]:
+          - generic [ref=e222]:
+            - heading "Teeth Whitening" [level=3] [ref=e223]
+            - list [ref=e225]:
+              - listitem [ref=e226]:
+                - img [ref=e228]
+                - generic [ref=e230]: Professional-grade whitening gel
+              - listitem [ref=e231]:
+                - img [ref=e233]
+                - generic [ref=e235]: Specialized light activation
+              - listitem [ref=e236]:
+                - img [ref=e238]
+                - generic [ref=e240]: Safe for enamel, visible results
+            - generic [ref=e241]:
+              - generic [ref=e242]:
+                - img [ref=e243]
+                - text: 1 Hour
+              - generic [ref=e246]:
+                - img [ref=e247]
+                - text: 500+ patients
+            - generic [ref=e252]:
+              - link "Book Now" [ref=e253] [cursor=pointer]:
+                - /url: /book
+              - link "Learn More" [ref=e254] [cursor=pointer]:
+                - /url: /services/teeth-whitening
+                - text: Learn More
+                - img [ref=e255]
+          - generic [ref=e257]:
+            - img "Teeth Whitening" [ref=e258]
+            - generic [ref=e259]:
+              - img [ref=e260]
+              - generic [ref=e262]: "4.9"
+            - generic [ref=e263]: "02"
+        - generic [ref=e264]:
+          - generic [ref=e265]:
+            - img "Dental Implants" [ref=e266]
+            - generic [ref=e267]:
+              - img [ref=e268]
+              - generic [ref=e270]: "5.0"
+            - generic [ref=e271]: "03"
+          - generic [ref=e272]:
+            - heading "Dental Implants" [level=3] [ref=e273]
+            - list [ref=e275]:
+              - listitem [ref=e276]:
+                - img [ref=e278]
+                - generic [ref=e280]: Titanium posts replace tooth roots
+              - listitem [ref=e281]:
+                - img [ref=e283]
+                - generic [ref=e285]: Prevents bone loss and preserves jaw
+              - listitem [ref=e286]:
+                - img [ref=e288]
+                - generic [ref=e290]: Natural look and full chewing ability
+            - generic [ref=e291]:
+              - generic [ref=e292]:
+                - img [ref=e293]
+                - text: 2-3 Visits
+              - generic [ref=e296]:
+                - img [ref=e297]
+                - text: 800+ patients
+            - generic [ref=e302]:
+              - link "Book Now" [ref=e303] [cursor=pointer]:
+                - /url: /book
+              - link "Learn More" [ref=e304] [cursor=pointer]:
+                - /url: /services/dental-implants
+                - text: Learn More
+                - img [ref=e305]
+        - generic [ref=e307]:
+          - generic [ref=e308]:
+            - heading "Root Canal Treatment" [level=3] [ref=e309]
+            - list [ref=e311]:
+              - listitem [ref=e312]:
+                - img [ref=e314]
+                - generic [ref=e316]: Eliminates infection from tooth pulp
+              - listitem [ref=e317]:
+                - img [ref=e319]
+                - generic [ref=e321]: Saves your natural tooth structure
+              - listitem [ref=e322]:
+                - img [ref=e324]
+                - generic [ref=e326]: Modern painless techniques
+            - generic [ref=e327]:
+              - generic [ref=e328]:
+                - img [ref=e329]
+                - text: 1-2 Visits
+              - generic [ref=e332]:
+                - img [ref=e333]
+                - text: 600+ patients
+            - generic [ref=e338]:
+              - link "Book Now" [ref=e339] [cursor=pointer]:
+                - /url: /book
+              - link "Learn More" [ref=e340] [cursor=pointer]:
+                - /url: /services/root-canal-treatment
+                - text: Learn More
+                - img [ref=e341]
+          - generic [ref=e343]:
+            - img "Root Canal Treatment" [ref=e344]
+            - generic [ref=e345]:
+              - img [ref=e346]
+              - generic [ref=e348]: "4.8"
+            - generic [ref=e349]: "04"
+        - generic [ref=e350]:
+          - generic [ref=e351]:
+            - img "Dental Veneers" [ref=e352]
+            - generic [ref=e353]:
+              - img [ref=e354]
+              - generic [ref=e356]: "4.9"
+            - generic [ref=e357]: "05"
+          - generic [ref=e358]:
+            - heading "Dental Veneers" [level=3] [ref=e359]
+            - list [ref=e361]:
+              - listitem [ref=e362]:
+                - img [ref=e364]
+                - generic [ref=e366]: Composite and ceramic options
+              - listitem [ref=e367]:
+                - img [ref=e369]
+                - generic [ref=e371]: Covers chips, cracks, and gaps
+              - listitem [ref=e372]:
+                - img [ref=e374]
+                - generic [ref=e376]: Natural-looking smile transformation
+            - generic [ref=e377]:
+              - generic [ref=e378]:
+                - img [ref=e379]
+                - text: 2 Visits
+              - generic [ref=e382]:
+                - img [ref=e383]
+                - text: 300+ patients
+            - generic [ref=e388]:
+              - link "Book Now" [ref=e389] [cursor=pointer]:
+                - /url: /book
+              - link "Learn More" [ref=e390] [cursor=pointer]:
+                - /url: /services/dental-veneers
+                - text: Learn More
+                - img [ref=e391]
+        - generic [ref=e393]:
+          - generic [ref=e394]:
+            - heading "Fluoride Therapy" [level=3] [ref=e395]
+            - list [ref=e397]:
+              - listitem [ref=e398]:
+                - img [ref=e400]
+                - generic [ref=e402]: Strengthens tooth enamel
+              - listitem [ref=e403]:
+                - img [ref=e405]
+                - generic [ref=e407]: Prevents cavities in children
+              - listitem [ref=e408]:
+                - img [ref=e410]
+                - generic [ref=e412]: Quick and painless application
+            - generic [ref=e413]:
+              - generic [ref=e414]:
+                - img [ref=e415]
+                - text: 20 Mins
+              - generic [ref=e418]:
+                - img [ref=e419]
+                - text: 500+ patients
+            - generic [ref=e424]:
+              - link "Book Now" [ref=e425] [cursor=pointer]:
+                - /url: /book
+              - link "Learn More" [ref=e426] [cursor=pointer]:
+                - /url: /services/fluoride-therapy-children
+                - text: Learn More
+                - img [ref=e427]
+          - generic [ref=e429]:
+            - img "Fluoride Therapy" [ref=e430]
+            - generic [ref=e431]:
+              - img [ref=e432]
+              - generic [ref=e434]: "5.0"
+            - generic [ref=e435]: "06"
+      - generic [ref=e438]:
+        - paragraph [ref=e440]: And more to discover
+        - generic [ref=e441]:
+          - link "Book Consultation" [ref=e442] [cursor=pointer]:
+            - /url: /book
+            - generic [ref=e443]:
+              - img [ref=e444]
+              - text: Book Consultation
+              - img [ref=e446]
+          - link "Explore All 12 Services" [ref=e448] [cursor=pointer]:
+            - /url: /services
+            - text: Explore All 12 Services
+            - img [ref=e449]
+    - generic [ref=e451]:
+      - img "Insurance Background" [ref=e453]
+      - generic [ref=e460]:
+        - generic [ref=e461]:
+          - generic [ref=e462]:
+            - img [ref=e463]
+            - generic [ref=e465]: Global Coverage
+          - heading "Seamless Insurance" [level=2] [ref=e466]:
+            - text: Seamless
+            - text: Insurance
+          - paragraph [ref=e467]: We partner with leading global providers to ensure your premium dental journey is entirely stress-free.
+          - generic [ref=e468]:
+            - generic [ref=e469]:
+              - img [ref=e470]
+              - generic [ref=e473]: Direct Billing Available
+            - generic [ref=e474]:
+              - img [ref=e475]
+              - generic [ref=e478]: Hassle-Free Processing
+        - generic [ref=e479]:
+          - img "Acacia" [ref=e483]
+          - img "Cosmopolitan" [ref=e487]
+          - img "Equity" [ref=e491]
+          - img "GAB" [ref=e495]
+          - img "Glico" [ref=e499]
+          - img "Metropolitan" [ref=e503]
+          - img "Nationwide" [ref=e507]
+          - img "Nexus" [ref=e511]
+    - generic [ref=e515]:
+      - generic [ref=e516]:
+        - generic [ref=e517]:
+          - img [ref=e518]
+          - text: Verified Feedback
+          - img [ref=e520]
+        - heading "Patient Experiences" [level=2] [ref=e522]:
+          - text: Patient
+          - generic [ref=e523]: Experiences
+      - link "Book Consultation" [ref=e526] [cursor=pointer]:
+        - /url: /book
+        - generic [ref=e527]:
+          - img [ref=e528]
+          - text: Book Consultation
+          - img [ref=e530]
+    - generic [ref=e537]:
+      - generic [ref=e538]:
+        - generic [ref=e539]:
+          - img [ref=e540]
+          - text: Our Network
+        - heading "Visit Our" [level=2] [ref=e543]
+        - generic [ref=e544]: Closest Branch
+        - paragraph [ref=e545]: Visit any of our 3 convenient locations across Accra for premium dental care.
+      - generic [ref=e546]:
+        - link "North Legon Clinic North Legon Agbogba road, North Legon 0559497906 View Details" [ref=e548] [cursor=pointer]:
+          - /url: /locations/dentist-north-legon
+          - generic [ref=e549]:
+            - img "North Legon" [ref=e551]
+            - generic [ref=e553]:
+              - generic [ref=e554]:
+                - img [ref=e555]
+                - generic [ref=e558]: Clinic
+              - heading "North Legon" [level=3] [ref=e559]
+              - paragraph [ref=e560]: Agbogba road, North Legon
+              - generic [ref=e562]:
+                - img [ref=e563]
+                - text: "0559497906"
+              - generic [ref=e566]:
+                - generic [ref=e567]: View Details
+                - img [ref=e569]
+        - link "Ashaley Botwe Clinic Ashaley Botwe School Junction, Ashaley Botwe 0257091176 View Details" [ref=e572] [cursor=pointer]:
+          - /url: /locations/dentist-ashaley-botwe
+          - generic [ref=e573]:
+            - img "Ashaley Botwe" [ref=e575]
+            - generic [ref=e577]:
+              - generic [ref=e578]:
+                - img [ref=e579]
+                - generic [ref=e582]: Clinic
+              - heading "Ashaley Botwe" [level=3] [ref=e583]
+              - paragraph [ref=e584]: School Junction, Ashaley Botwe
+              - generic [ref=e586]:
+                - img [ref=e587]
+                - text: "0257091176"
+              - generic [ref=e590]:
+                - generic [ref=e591]: View Details
+                - img [ref=e593]
+        - link "ACP Estate Clinic ACP Estate ACP Estate Junction, Kwabenya 0545563839 View Details" [ref=e596] [cursor=pointer]:
+          - /url: /locations/dentist-acp-estate
+          - generic [ref=e597]:
+            - img "ACP Estate" [ref=e599]
+            - generic [ref=e601]:
+              - generic [ref=e602]:
+                - img [ref=e603]
+                - generic [ref=e606]: Clinic
+              - heading "ACP Estate" [level=3] [ref=e607]
+              - paragraph [ref=e608]: ACP Estate Junction, Kwabenya
+              - generic [ref=e610]:
+                - img [ref=e611]
+                - text: "0545563839"
+              - generic [ref=e614]:
+                - generic [ref=e615]: View Details
+                - img [ref=e617]
+      - generic [ref=e620]:
+        - img [ref=e621]
+        - generic [ref=e624]: Open Monday - Saturday, 8:00AM - 6:00PM
+      - link "Book Consultation" [ref=e626] [cursor=pointer]:
+        - /url: /book
+        - generic [ref=e627]:
+          - img [ref=e628]
+          - text: Book Consultation
+          - img [ref=e630]
+    - generic [ref=e632]:
+      - generic [ref=e637]:
+        - img "Dental background" [ref=e639]
+        - img "Dental background" [ref=e641]
+        - img "Dental background" [ref=e643]
+        - img "Dental background" [ref=e645]
+      - generic [ref=e647]:
+        - generic [ref=e648]:
+          - generic [ref=e649]:
+            - img [ref=e650]
+            - text: Get In Touch
+          - heading "Have Questions?" [level=2] [ref=e653]
+          - generic [ref=e654]: We're Here to Help
+          - paragraph [ref=e655]: Fill out the form below and our team will get back to you within 24 hours.
+        - generic [ref=e658]:
+          - generic [ref=e659]:
+            - generic [ref=e660]:
+              - generic [ref=e661]: Full Name *
+              - textbox "John Doe" [ref=e662]
+            - generic [ref=e663]:
+              - generic [ref=e664]: Email Address *
+              - textbox "john@example.com" [ref=e665]
+          - generic [ref=e666]:
+            - generic [ref=e667]:
+              - generic [ref=e668]: Phone Number *
+              - textbox "+233 XX XXX XXXX" [ref=e669]
+            - generic [ref=e670]:
+              - generic [ref=e671]: Service Needed
+              - combobox [ref=e672]:
+                - option "Select a service" [selected]
+                - option "General Checkup"
+                - option "Teeth Cleaning"
+                - option "Teeth Whitening"
+                - option "Dental Implants"
+                - option "Orthodontics (Braces)"
+                - option "Root Canal"
+                - option "Crowns & Bridges"
+                - option "Other"
+          - generic [ref=e673]:
+            - generic [ref=e674]: Your Message
+            - textbox "Tell us about your dental concerns or questions..." [ref=e675]
+          - generic [ref=e676]:
+            - button "Send Message" [ref=e677] [cursor=pointer]:
+              - generic [ref=e678]:
+                - text: Send Message
+                - img [ref=e679]
+            - generic [ref=e682]:
+              - link "+233 55 949 7906" [ref=e683] [cursor=pointer]:
+                - /url: tel:+233559497906
+                - img [ref=e684]
+                - generic [ref=e686]: +233 55 949 7906
+              - link "info@newvisiondental.com" [ref=e687] [cursor=pointer]:
+                - /url: mailto:info@newvisiondental.com
+                - img [ref=e688]
+                - generic [ref=e691]: info@newvisiondental.com
+    - generic [ref=e693]:
+      - img "Ready to book background" [ref=e694]
+      - generic [ref=e699]:
+        - generic [ref=e700]:
+          - img [ref=e701]
+          - generic [ref=e703]: Premium Dental Experience
+        - heading "Ready to Transform Your Smile?" [level=2] [ref=e704]
+        - paragraph [ref=e705]: Join thousands of satisfied patients. Book your premium dental session today at any of our 3 locations.
+        - generic [ref=e706]:
+          - generic [ref=e707]:
+            - img [ref=e708]
+            - generic [ref=e711]: Same-Day Appointments
+          - generic [ref=e712]:
+            - img [ref=e713]
+            - generic [ref=e716]: Flexible Hours
+          - generic [ref=e717]:
+            - img [ref=e718]
+            - generic [ref=e721]: 3 Locations
+          - generic [ref=e722]:
+            - img [ref=e723]
+            - generic [ref=e726]: Insurance Accepted
+        - generic [ref=e727]:
+          - link "Book Now" [ref=e728] [cursor=pointer]:
+            - /url: /book
+            - generic [ref=e729]: Book Now
+            - img [ref=e730]
+          - link "Call Us" [ref=e732] [cursor=pointer]:
+            - /url: tel:+1234567890
+            - img [ref=e733]
+            - generic [ref=e735]: Call Us
+    - button
+  - contentinfo [ref=e736]:
+    - generic [ref=e739]:
+      - generic [ref=e740]:
+        - generic [ref=e741]:
+          - link "New Vision Dental" [ref=e742] [cursor=pointer]:
+            - /url: /
+            - img "New Vision Dental" [ref=e744]
+          - paragraph [ref=e745]: Elite dental care in Accra, Ghana.
+          - generic [ref=e746]:
+            - link "newvisiondentalclinic@gmail.com" [ref=e747] [cursor=pointer]:
+              - /url: mailto:newvisiondentalclinic@gmail.com
+              - img [ref=e748]
+              - generic [ref=e751]: newvisiondentalclinic@gmail.com
+            - generic [ref=e752]:
+              - img [ref=e753]
+              - text: "Mon - Sat: 8:30am - 6:00pm"
+          - generic [ref=e756]:
+            - heading "Our Socials" [level=4] [ref=e757]
+            - generic [ref=e758]:
+              - link "Facebook" [ref=e759] [cursor=pointer]:
+                - /url: https://www.facebook.com/share/1UQaw9ZCGK/?mibextid=wwXIfr
+                - img [ref=e760]
+              - link "Instagram" [ref=e762] [cursor=pointer]:
+                - /url: https://www.instagram.com/newvisiondental.clinic?igsh=eHkydWlrcWdlOGNk
+                - img [ref=e763]
+              - link "TikTok" [ref=e766] [cursor=pointer]:
+                - /url: https://www.tiktok.com/@newvisiondental.clinic?_r=1&_t=ZS-94lpwWWNsCC
+                - img [ref=e767]
+        - generic [ref=e769]:
+          - heading "Services" [level=4] [ref=e770]
+          - list [ref=e771]:
+            - listitem [ref=e772]:
+              - link "Consultation" [ref=e773] [cursor=pointer]:
+                - /url: /services/consultation
+                - img [ref=e774]
+                - generic [ref=e776]: Consultation
+            - listitem [ref=e777]:
+              - link "Dental X-Ray" [ref=e778] [cursor=pointer]:
+                - /url: /services/dental-x-ray-periapical
+                - img [ref=e779]
+                - generic [ref=e781]: Dental X-Ray
+            - listitem [ref=e782]:
+              - link "Scaling & Polishing" [ref=e783] [cursor=pointer]:
+                - /url: /services/scaling-polishing
+                - img [ref=e784]
+                - generic [ref=e786]: Scaling & Polishing
+            - listitem [ref=e787]:
+              - link "Teeth Whitening" [ref=e788] [cursor=pointer]:
+                - /url: /services/teeth-whitening
+                - img [ref=e789]
+                - generic [ref=e791]: Teeth Whitening
+            - listitem [ref=e792]:
+              - link "Dental Implants" [ref=e793] [cursor=pointer]:
+                - /url: /services/dental-implants
+                - img [ref=e794]
+                - generic [ref=e796]: Dental Implants
+            - listitem [ref=e797]:
+              - link "Composite Restoration" [ref=e798] [cursor=pointer]:
+                - /url: /services/composite-restoration
+                - img [ref=e799]
+                - generic [ref=e801]: Composite Restoration
+            - listitem [ref=e802]:
+              - link "Root Canal Treatment" [ref=e803] [cursor=pointer]:
+                - /url: /services/root-canal-treatment
+                - img [ref=e804]
+                - generic [ref=e806]: Root Canal Treatment
+            - listitem [ref=e807]:
+              - link "Crown & Bridge" [ref=e808] [cursor=pointer]:
+                - /url: /services/crown-bridge-recementation
+                - img [ref=e809]
+                - generic [ref=e811]: Crown & Bridge
+        - generic [ref=e812]:
+          - heading [level=4] [ref=e813]
+          - list [ref=e814]:
+            - listitem [ref=e815]:
+              - link "Tooth Extraction" [ref=e816] [cursor=pointer]:
+                - /url: /services/tooth-extraction
+                - img [ref=e817]
+                - generic [ref=e819]: Tooth Extraction
+            - listitem [ref=e820]:
+              - link "Dental Veneers" [ref=e821] [cursor=pointer]:
+                - /url: /services/dental-veneers
+                - img [ref=e822]
+                - generic [ref=e824]: Dental Veneers
+            - listitem [ref=e825]:
+              - link "Fluoride Therapy" [ref=e826] [cursor=pointer]:
+                - /url: /services/fluoride-therapy-children
+                - img [ref=e827]
+                - generic [ref=e829]: Fluoride Therapy
+            - listitem [ref=e830]:
+              - link "Fissure Sealing" [ref=e831] [cursor=pointer]:
+                - /url: /services/fissure-sealing-children
+                - img [ref=e832]
+                - generic [ref=e834]: Fissure Sealing
+        - generic [ref=e835]:
+          - heading "Company" [level=4] [ref=e836]
+          - list [ref=e837]:
+            - listitem [ref=e838]:
+              - link "About Us" [ref=e839] [cursor=pointer]:
+                - /url: /about
+                - img [ref=e840]
+                - text: About Us
+            - listitem [ref=e842]:
+              - link "Our Services" [ref=e843] [cursor=pointer]:
+                - /url: /services
+                - img [ref=e844]
+                - text: Our Services
+            - listitem [ref=e846]:
+              - link "Gallery" [ref=e847] [cursor=pointer]:
+                - /url: /gallery
+                - img [ref=e848]
+                - text: Gallery
+            - listitem [ref=e850]:
+              - link "Blog" [ref=e851] [cursor=pointer]:
+                - /url: /blog
+                - img [ref=e852]
+                - text: Blog
+            - listitem [ref=e854]:
+              - link "Contact" [ref=e855] [cursor=pointer]:
+                - /url: /contact
+                - img [ref=e856]
+                - text: Contact
+            - listitem [ref=e858]:
+              - link "Book Appointment" [ref=e859] [cursor=pointer]:
+                - /url: /book
+                - img [ref=e860]
+                - text: Book Appointment
+        - generic [ref=e862]:
+          - heading "Locations" [level=4] [ref=e863]
+          - list [ref=e864]:
+            - listitem [ref=e865]:
+              - link "North Legon" [ref=e866] [cursor=pointer]:
+                - /url: /locations/dentist-north-legon
+                - img [ref=e867]
+                - generic [ref=e870]: North Legon
+              - link "0559497906" [ref=e871] [cursor=pointer]:
+                - /url: tel:+2330559497906
+                - img [ref=e872]
+                - text: "0559497906"
+            - listitem [ref=e874]:
+              - link "Ashaley Botwe" [ref=e875] [cursor=pointer]:
+                - /url: /locations/dentist-ashaley-botwe
+                - img [ref=e876]
+                - generic [ref=e879]: Ashaley Botwe
+              - link "0257091176" [ref=e880] [cursor=pointer]:
+                - /url: tel:+2330257091176
+                - img [ref=e881]
+                - text: "0257091176"
+            - listitem [ref=e883]:
+              - link "ACP Estate" [ref=e884] [cursor=pointer]:
+                - /url: /locations/dentist-acp-estate
+                - img [ref=e885]
+                - generic [ref=e888]: ACP Estate
+              - link "0545563839" [ref=e889] [cursor=pointer]:
+                - /url: tel:+2330545563839
+                - img [ref=e890]
+                - text: "0545563839"
+        - generic [ref=e892]:
+          - heading "Sitemap" [level=4] [ref=e893]
+          - list [ref=e894]:
+            - listitem [ref=e895]:
+              - link "Home" [ref=e896] [cursor=pointer]:
+                - /url: /
+                - img [ref=e897]
+                - text: Home
+            - listitem [ref=e899]:
+              - link "About Us" [ref=e900] [cursor=pointer]:
+                - /url: /about
+                - img [ref=e901]
+                - text: About Us
+            - listitem [ref=e903]:
+              - link "All Services" [ref=e904] [cursor=pointer]:
+                - /url: /services
+                - img [ref=e905]
+                - text: All Services
+            - listitem [ref=e907]:
+              - link "Book Online" [ref=e908] [cursor=pointer]:
+                - /url: /book
+                - img [ref=e909]
+                - text: Book Online
+            - listitem [ref=e911]:
+              - link "Our Locations" [ref=e912] [cursor=pointer]:
+                - /url: /locations
+                - img [ref=e913]
+                - text: Our Locations
+            - listitem [ref=e915]:
+              - link "Gallery" [ref=e916] [cursor=pointer]:
+                - /url: /gallery
+                - img [ref=e917]
+                - text: Gallery
+        - generic [ref=e919]:
+          - heading [level=4] [ref=e920]
+          - list [ref=e921]:
+            - listitem [ref=e922]:
+              - link "Blog" [ref=e923] [cursor=pointer]:
+                - /url: /blog
+                - img [ref=e924]
+                - text: Blog
+            - listitem [ref=e926]:
+              - link "Contact Us" [ref=e927] [cursor=pointer]:
+                - /url: /contact
+                - img [ref=e928]
+                - text: Contact Us
+            - listitem [ref=e930]:
+              - link "Login" [ref=e931] [cursor=pointer]:
+                - /url: /login
+                - img [ref=e932]
+                - text: Login
+            - listitem [ref=e934]:
+              - link "Register" [ref=e935] [cursor=pointer]:
+                - /url: /register
+                - img [ref=e936]
+                - text: Register
+        - generic [ref=e938]:
+          - heading [level=4] [ref=e939]
+          - generic [ref=e940]:
+            - link "Book Now" [ref=e941] [cursor=pointer]:
+              - /url: /book
+              - img [ref=e942]
+              - text: Book Now
+            - link "Call Now" [ref=e944] [cursor=pointer]:
+              - /url: tel:+2330559497906
+              - img [ref=e945]
+              - text: Call Now
+        - generic [ref=e947]:
+          - heading [level=4] [ref=e948]
+          - paragraph [ref=e949]: © 2026 New Vision Dental Clinic. All rights reserved.
+      - generic [ref=e951]:
+        - link "Privacy Policy" [ref=e952] [cursor=pointer]:
+          - /url: /contact
+        - link "Terms of Service" [ref=e953] [cursor=pointer]:
+          - /url: /contact
+  - alert [ref=e954]
