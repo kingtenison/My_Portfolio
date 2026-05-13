@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import { Poppins, Cinzel, JetBrains_Mono } from "next/font/google";
-import dynamic from "next/dynamic";
-import React from "react";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollProgress from "@/components/ScrollProgress";
 import AmbientGradientBlob from "@/components/AmbientGradientBlob";
 import ParticleBackground from "@/components/ParticleBackground";
+import ChatBotLazy from "@/components/ChatBotLazy";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -38,12 +37,6 @@ export const metadata: Metadata = {
   description: "Fullstack Engineer & AI Automation Specialist showcasing innovative projects and automation solutions.",
 };
 
-// Lazy load ChatBot - splits it into separate chunk, only loads on client
-const ChatBotLoader = dynamic(() => import("@/components/ChatBot"), {
-  ssr: false,
-  loading: () => null,
-});
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -63,7 +56,7 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-1 pt-16 relative z-10">{children}</main>
         <Footer />
-        <ChatBotLoader />
+        <ChatBotLazy />
       </body>
     </html>
   );
