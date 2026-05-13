@@ -65,21 +65,6 @@ export default function ChatBot() {
     ]
   }), []);
 
-  // Auto-greeting
-  useEffect(() => {
-    if (isOpen && messages.length === 0) {
-      const timer = setTimeout(() => {
-        sendBotMessage(`Hi! I'm ${portfolioData.name}'s assistant.`);
-      }, 800);
-      return () => clearTimeout(timer);
-    }
-  }, [isOpen, messages.length, portfolioData.name, sendBotMessage]);
-
-  // Scroll to bottom
-  useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages]);
-
   const sendBotMessage = useCallback((text: string, type?: Message["type"], data?: any) => {
     const botMsg: Message = {
       id: Date.now().toString(),
@@ -111,7 +96,7 @@ export default function ChatBot() {
     }
 
     if (intentPatterns.greeting.test(lowerInput)) {
-      sendBotMessage(`Hi! I'm ${portfolioData.name}'s virtual assistant.`);
+      sendBotMessage(`Hi! I'm ${portfolioData.name}'s assistant.`);
     } else if (intentPatterns.about.test(lowerInput)) {
       sendBotMessage(`${portfolioData.name} - ${portfolioData.about}`);
     } else if (intentPatterns.skills.test(lowerInput)) {
@@ -119,13 +104,13 @@ export default function ChatBot() {
     } else if (intentPatterns.projects.test(lowerInput)) {
       sendBotMessage("Projects:", "carousel", portfolioData.projects);
     } else if (intentPatterns.contact.test(lowerInput) || lowerInput.includes("hire")) {
-      sendBotMessage(`📧 ${portfolioData.email}\n📱 ${portfolioData.phone}\n🔗 ${portfolioData.calenderlyUrl}`, "quick-replies", ["Yes", "No"]);
+      sendBotMessage(`Email: ${portfolioData.email}\nPhone: ${portfolioData.phone}\nSchedule: ${portfolioData.calenderlyUrl}`, "quick-replies", ["Yes", "No"]);
     } else if (intentPatterns.resume.test(lowerInput)) {
       sendBotMessage(`Resume: ${portfolioData.resumeUrl}`);
     } else if (intentPatterns.social.test(lowerInput)) {
       sendBotMessage(`GitHub: ${portfolioData.github}\nLinkedIn: ${portfolioData.linkedin}`);
     } else if (intentPatterns.help.test(lowerInput)) {
-      sendBotMessage("Ask: About, Skills, Projects, Contact, Resume, Hire.");
+      sendBotMessage("Ask: About, Skills, Projects, Contact, Resume.");
     } else {
       sendBotMessage("Type 'help' for options.");
     }
@@ -148,6 +133,21 @@ export default function ChatBot() {
     sendUserMessage(reply);
   }, [sendUserMessage]);
 
+  // Auto-greeting after chat opens
+  useEffect(() => {
+    if (isOpen && messages.length === 0) {
+      const timer = setTimeout(() => {
+        sendBotMessage(`Hi! I'm ${portfolioData.name}'s assistant.`);
+      }, 800);
+      return () => clearTimeout(timer);
+    }
+  }, [isOpen, messages.length, portfolioData.name, sendBotMessage]);
+
+  // Scroll to bottom
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
+
   return (
     <>
       <ChatButton onClick={() => setIsOpen(!isOpen)} isOpen={isOpen} />
@@ -165,7 +165,6 @@ export default function ChatBot() {
             onQuickReply={handleQuickReply}
             onClose={() => setIsOpen(false)}
             getQuickReplies={(msg) => msg.data?.quickReplies || null}
-            leadForm={showLeadForm ? { data: leadData } : undefined}
           />
         )}
       </AnimatePresence>

@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Message, QuickReply, portfolioData } from "./ChatBot";
+import { Message } from "./ChatBot";
 import ReactMarkdown from "react-markdown";
 
 interface ChatWindowProps {
@@ -14,7 +14,6 @@ interface ChatWindowProps {
   onQuickReply: (reply: string) => void;
   onClose: () => void;
   getQuickReplies: (message: Message) => string[] | null;
-  userInfo: any;
 }
 
 export default function ChatWindow({
