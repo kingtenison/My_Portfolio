@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 
 interface Particle {
@@ -14,28 +14,46 @@ interface Particle {
 }
 
 const colors = [
-  "rgba(40, 184, 213, 0.6)",   // primary-start
-  "rgba(14, 165, 233, 0.6)",   // accent-blue
-  "rgba(139, 92, 246, 0.6)",   // accent-purple
-  "rgba(212, 175, 55, 0.5)",   // gold
-  "rgba(20, 184, 166, 0.5)",   // accent-teal
+  "rgba(40, 184, 213, 0.5)",
+  "rgba(14, 165, 233, 0.5)",
+  "rgba(139, 92, 246, 0.5)",
+  "rgba(212, 175, 55, 0.4)",
+  "rgba(20, 184, 166, 0.4)",
 ];
 
-export default function ParticleBackground({ density = 30 }: { density?: number }) {
-  const particles: Particle[] = [];
+export default function ParticleBackground({ density = 10 }: { density?: number }) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(true);
 
-  for (let i = 0; i < density; i++) {
-    particles.push({
-      id: i,
-      x: Math.random() * 100,
-      y: Math.random() * 100,
-      size: Math.random() * 4 + 2,
-      duration: Math.random() * 20 + 10,
-      delay: Math.random() * 10,
-      color: colors[Math.floor(Math.random() * colors.length)],
-    });
-  }
+  // Reduce particle count significantly for performance
+  const particles = useMemo(() => {
+    const arr: Particle[] = [];
+    for (let i = 0; i < density; i++) {
+      arr.push({
+        id: i,
+        x: Math.random() * 100,
+        y: Math.random() * 100,
+        size: Math.random() * 3 + 2,
+        duration: Math.random() * 20 + 10,
+        delay: Math.random() * 10,
+        color: colors[Math.floor(Math.random() * colors.length)],
+      });
+    }
+    return arr;
+  }, [density]);
+
+  // Pause animations when not in viewport
+  useEffect(() => {
+    if (!containerRef.current) return;
+    
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { threshold: 0 }
+    );
+    
+    observer.observe(containerRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div
@@ -53,13 +71,13 @@ export default function ParticleBackground({ density = 30 }: { density?: number 
             width: particle.size,
             height: particle.size,
             background: particle.color,
-            boxShadow: `0 0 ${particle.size * 2}px ${particle.color}`,
+            boxShadow: `0 0 ${particle.size}px ${particle.color}`,
           }}
           animate={{
-            y: [0, -30, 0],
-            x: [0, 15, 0],
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.7, 0.3],
+            y: isVisible ? [0, -30, 0] : 0,
+            x: isVisible ? [0, 15, 0] : 0,
+            scale: isVisible ? [1, 1.2, 1] : 1,
+            opacity: isVisible ? [0.3, 0.7, 0.3] : 0.3,
           }}
           transition={{
             duration: particle.duration,

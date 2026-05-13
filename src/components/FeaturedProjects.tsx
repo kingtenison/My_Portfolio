@@ -42,28 +42,28 @@ const FeaturedProjects = () => {
         {/* Animated background */}
         <div className="absolute inset-0 mesh-gradient opacity-30" />
         
-        {/* Floating orbs */}
+        {/* Floating orbs - reduced for performance */}
         <div className="absolute inset-0 pointer-events-none">
-          {[...Array(6)].map((_, i) => (
+          {[...Array(3)].map((_, i) => (
             <motion.div
               key={i}
               className="absolute rounded-full blur-3xl opacity-10"
               style={{
                 width: 300 + i * 50,
                 height: 300 + i * 50,
-                left: `${i * 18}%`,
-                top: `${i % 2 === 0 ? 0 : 70}%`,
+                left: `${i * 30}%`,
+                top: `${i % 2 === 0 ? 10 : 70}%`,
                 background: `radial-gradient(circle, 
-                  ${i % 2 === 0 ? "rgba(40,184,213,0.3)" : "rgba(139,92,246,0.3)"}, 
+                  ${i % 2 === 0 ? "rgba(40,184,213,0.25)" : "rgba(139,92,246,0.25)"}, 
                   transparent 70%)`,
               }}
               animate={{
-                y: [0, 40, 0],
-                x: [0, 30, 0],
-                scale: [1, 1.2, 1],
+                y: [0, 30, 0],
+                x: [0, 20, 0],
+                scale: [1, 1.1, 1],
               }}
               transition={{
-                duration: 15 + i * 2,
+                duration: 18 + i * 3,
                 repeat: Infinity,
                 ease: "easeInOut",
                 delay: i * 0.5,

@@ -1,20 +1,38 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
 import Button from "@/components/Button";
 
 const Hero = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [videoLoaded, setVideoLoaded] = useState(false);
+  const isInView = useInView(videoRef, {
+    once: true,
+    margin: "-20%",
+  });
+
+  useEffect(() => {
+    if (isInView && videoRef.current && !videoLoaded) {
+      videoRef.current.play().catch(() => {});
+      setVideoLoaded(true);
+    }
+  }, [isInView, videoLoaded]);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Video Background */}
       <div className="absolute inset-0">
         <video
+          ref={videoRef}
           autoPlay
           loop
           muted
           playsInline
           className="absolute inset-0 w-full h-full object-cover scale-105"
           style={{ filter: "brightness(0.4) contrast(1.2)" }}
+          disablePictureInPicture
+          preload="auto"
         >
           <source src="/Floating Blue Plexus.mp4" type="video/mp4" />
         </video>
@@ -43,25 +61,25 @@ const Hero = () => {
 
       {/* Floating geometric shapes */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(12)].map((_, i) => (
+        {[...Array(6)].map((_, i) => (
           <motion.div
             key={i}
             className="absolute rounded-full"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
-              width: Math.random() * 80 + 20,
-              height: Math.random() * 80 + 20,
+              width: Math.random() * 60 + 30,
+              height: Math.random() * 60 + 30,
               background: `linear-gradient(135deg, 
-                rgba(40, 184, 213, ${Math.random() * 0.1 + 0.05}),
-                rgba(139, 92, 246, ${Math.random() * 0.1 + 0.05}))`,
-              filter: `blur(${Math.random() * 20 + 10}px)`,
+                rgba(40, 184, 213, ${Math.random() * 0.08 + 0.04}),
+                rgba(139, 92, 246, ${Math.random() * 0.08 + 0.04}))`,
+              filter: `blur(${Math.random() * 25 + 15}px)`,
             }}
             animate={{
               y: [0, Math.random() * 60 - 30, 0],
               x: [0, Math.random() * 60 - 30, 0],
               rotate: [0, 360],
-              scale: [1, 1.2, 1],
+              scale: [1, 1.1, 1],
             }}
             transition={{
               duration: Math.random() * 15 + 10,
@@ -73,23 +91,23 @@ const Hero = () => {
         ))}
 
         {/* Floating rings */}
-        {[...Array(5)].map((_, i) => (
+        {[...Array(3)].map((_, i) => (
           <motion.div
             key={`ring-${i}`}
             className="absolute border-2 border-primary-start/10 rounded-full"
             style={{
-              left: `${20 + i * 15}%`,
+              left: `${20 + i * 20}%`,
               top: `${30 + (i % 2) * 40}%`,
-              width: 120 - i * 15,
-              height: 120 - i * 15,
+              width: 120 - i * 20,
+              height: 120 - i * 20,
             }}
             animate={{
               rotate: [0, 360],
-              scale: [1, 1.1, 1],
-              opacity: [0.1, 0.2, 0.1],
+              scale: [1, 1.05, 1],
+              opacity: [0.08, 0.15, 0.08],
             }}
             transition={{
-              duration: 20 + i * 5,
+              duration: 25 + i * 5,
               repeat: Infinity,
               ease: "linear",
               delay: i * 0.5,

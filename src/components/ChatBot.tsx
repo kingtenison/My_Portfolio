@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ChatWindow from "./ChatWindow";
 import ChatButton from "./ChatButton";
@@ -29,108 +29,7 @@ export interface Project {
   url: string;
 }
 
-// Portfolio data for the bot
-export const portfolioData = {
-  name: "Hansen Addy Joy",
-  title: "Fullstack Engineer & AI Automation Specialist",
-  location: "Accra, Ghana",
-  email: "kingtenison@gmail.com",
-  phone: "+233 53 529 2708",
-  github: "https://github.com/kingtenison",
-  linkedin: "https://linkedin.com/in/hansenjoy",
-  resumeUrl: "/resume.pdf", // You should add your actual resume
-  calenderlyUrl: "https://calendly.com/your-link", // Add your Calendly
-  about: "With over 5+ years of experience, I specialize in building innovative software solutions that solve real-world problems. From hospital management systems to AI-powered automation, I create solutions that drive measurable business results. I'm passionate about clean code, user experience, and delivering projects that exceed expectations.",
-  
-  skills: {
-    frontend: ["React.js", "JavaScript (ES6+)", "HTML5", "CSS3", "Responsive Design"],
-    backend: ["Node.js", "Express.js", "RESTful API Design", "Authentication"],
-    databases: ["MongoDB", "Database Architecture", "Query Optimisation"],
-    aiAutomation: ["OpenAI API", "LLM Integration", "Workflow Automation", "YouTube Data API"],
-    design: ["UI/UX Design", "Figma", "Conversion Optimisation"],
-    tools: ["Git & GitHub", "Postman", "Python", "C#", "C++"]
-  },
-  
-  projects: [
-    {
-      id: "hospital-management",
-      title: "Hospital Management System",
-      description: "Complete HMS with patient records, appointment booking, staff management, and reporting dashboards.",
-      image: "/projects/hospital.jpg",
-      tags: ["React", "Node.js", "MongoDB"],
-      url: "https://frontend-nu-lovat-79.vercel.app/"
-    },
-    {
-      id: "escrow-marketplace",
-      title: "Escrow Marketplace Platform",
-      description: "Secure buyer-seller transaction platform with multi-step fund holding and automated release.",
-      image: "/projects/escrow.jpg",
-      tags: ["React", "Node.js", "Payment Gateway"],
-      url: "https://escrow-tan.vercel.app/"
-    },
-     {
-       id: "restaurant-platform",
-       title: "Restaurant Ordering Platform",
-       description: "Fully-featured restaurant website with online ordering, table reservations, menu management, and integrated payment processing.",
-       image: "/projects/restaurant.jpg",
-       tags: ["React", "Node.js", "MongoDB", "Stripe"],
-       url: "https://fable-os.vercel.app/"
-     },
-    {
-      id: "link-shortener",
-      title: "Link Shortener Platform",
-      description: "URL shortener with custom aliases, real-time analytics, QR codes, and expiry controls.",
-      image: "/projects/link-shortener.jpg",
-      tags: ["React", "Node.js", "MongoDB"],
-      url: "https://link-platform-two.vercel.app/dashboard"
-    },
-    {
-      id: "file-converter",
-      title: "File Converter Web App",
-      description: "Multi-format file conversion with drag-and-drop UI, server-side processing, and instant download.",
-      image: "/projects/file-converter.jpg",
-      tags: ["React", "Node.js", "Serverside Processing"],
-      url: "https://fileforge-iota.vercel.app"
-    },
-    {
-      id: "pharmacy-redesign",
-      title: "Pharmacy Website Redesign",
-      description: "Improved navigation, product discoverability, mobile responsiveness, and checkout flow.",
-      image: "/projects/pharmacy.jpg",
-      tags: ["React", "Node.js", "SEO", "Conversion Optimisation"],
-      url: "https://frontend-nu-lovat-79.vercel.app/"
-    }
-  ],
-  
-  faqs: [
-    {
-      question: "What is your experience?",
-      answer: "I'm a Fullstack Engineer & AI Automation Specialist with over 5+ years of experience building production-grade systems across healthcare, finance, e-commerce, and content automation. I've delivered 50+ successful projects."
-    },
-    {
-      question: "What technologies do you use?",
-      answer: "I specialize in React, Node.js, Python, MongoDB, and AI/ML technologies like OpenAI API. I also have experience with cloud platforms, CI/CD, and modern DevOps practices."
-    },
-    {
-      question: "Where are you located?",
-      answer: "I'm based in Accra, Ghana, but I work remotely with clients worldwide. I'm open to both freelance and full-time opportunities."
-    },
-    {
-      question: "What are your working hours?",
-      answer: "I'm typically available Monday - Friday, 9 AM - 6 PM GMT. I'm flexible and can adjust to match your timezone for collaboration."
-    },
-    {
-      question: "Do you work on freelance projects?",
-      answer: "Yes! I'm always open to freelance and contract work. I can handle projects of any size - from MVPs to large-scale enterprise systems."
-    },
-    {
-      question: "How can we schedule a call?",
-      answer: "You can schedule a consultation directly through my Calendly link. I'd love to discuss your project requirements!"
-    }
-  ]
-};
-
-// Intent patterns for simple NLP
+// Intent patterns for simple NLP - defined outside component (no hooks needed)
 const intentPatterns = {
   greeting: /(hi|hello|hey|greetings|good morning|good afternoon|good evening)/i,
   about: /(about|bio|background|who is|tell me about|introduce)/i,
@@ -159,6 +58,52 @@ export default function ChatBot() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
+  // Portfolio data - memoized to prevent recreation on every render
+  const portfolioData = useMemo(() => ({
+    name: "Hansen Addy Joy",
+    title: "Fullstack Engineer & AI Automation Specialist",
+    location: "Accra, Ghana",
+    email: "kingtenison@gmail.com",
+    phone: "+233 53 529 2708",
+    github: "https://github.com/kingtenison",
+    linkedin: "https://linkedin.com/in/hansenjoy",
+    resumeUrl: "/resume.pdf",
+    calenderlyUrl: "https://calendly.com/your-link",
+    about: "With over 5+ years of experience, I specialize in building innovative software solutions.",
+    skills: {
+      frontend: ["React.js", "JavaScript", "HTML5", "CSS3"],
+      backend: ["Node.js", "Express.js", "REST APIs"],
+      databases: ["MongoDB", "Architecture"],
+      aiAutomation: ["OpenAI API", "LLM Integration", "Automation"],
+      design: ["UI/UX", "Figma"],
+      tools: ["Git", "Postman", "Python"]
+    },
+    projects: [
+      { id: "hospital-management", title: "Hospital System", description: "HMS with patient tracking.", image: "/projects/hospital.jpg", tags: ["React", "Node.js"], url: "https://frontend-nu-lovat-79.vercel.app/" },
+      { id: "escrow-marketplace", title: "Escrow Marketplace", description: "Secure transaction platform.", image: "/projects/escrow.jpg", tags: ["React", "Node.js"], url: "https://escrow-tan.vercel.app/" },
+      { id: "restaurant-platform", title: "Restaurant Platform", description: "Ordering with payments.", image: "/projects/restaurant.jpg", tags: ["React", "Stripe"], url: "https://fable-os.vercel.app/" },
+      { id: "link-shortener", title: "Link Shortener", description: "URL shortener with analytics.", image: "/projects/link-shortener.jpg", tags: ["React", "Node.js"], url: "https://link-platform-two.vercel.app/" },
+      { id: "file-converter", title: "File Converter", description: "Multi-format converter.", image: "/projects/file-converter.jpg", tags: ["React", "Node.js"], url: "https://fileforge-iota.vercel.app" }
+    ],
+    faqs: [
+      { question: "Experience?", answer: "5+ years, 50+ projects." },
+      { question: "Tech stack?", answer: "React, Node.js, Python, MongoDB, OpenAI." },
+      { question: "Location?", answer: "Accra, Ghana - remote worldwide." },
+      { question: "Availability?", answer: "Mon-Fri, 9AM-6PM GMT." },
+      { question: "Freelance?", answer: "Yes, projects of all sizes." }
+    ]
+  }), []);
+  const [isOpen, setIsOpen] = useState(false);
+  const [messages, setMessages] = useState<Message[]>([]);
+  const [inputValue, setInputValue] = useState("");
+  const [isTyping, setIsTyping] = useState(false);
+  const [userInfo, setUserInfo] = useState<{ name?: string; interest?: string }>({});
+  const [showLeadForm, setShowLeadForm] = useState(false);
+  const [leadData, setLeadData] = useState({ name: "", email: "", budget: "", timeline: "" });
+  
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+
   // Auto-greeting after 3 seconds if chat is opened
   useEffect(() => {
     if (isOpen && messages.length === 0) {
@@ -169,21 +114,23 @@ export default function ChatBot() {
     }
   }, [isOpen, messages.length]);
 
-  // Scroll to bottom when messages change
+  // Scroll to bottom when messages change - optimized
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ behavior: "smooth", block: "end" });
+    }
   }, [messages]);
 
-  const greetingMessage = (): string => {
+  const greetingMessage = useCallback((): string => {
     const greetings = [
       `Hi there! 👋 I'm ${portfolioData.name}'s virtual assistant. How can I help you today?`,
       `Hello! Welcome to ${portfolioData.name}'s portfolio. I'm here to help you explore the work and skills.`,
       `Hey! 👋 I'm the virtual assistant for ${portfolioData.name}. Feel free to ask me anything!`
     ];
     return greetings[Math.floor(Math.random() * greetings.length)];
-  };
+  }, [portfolioData.name]);
 
-  const sendBotMessage = (text: string, type: Message["type"] = "text", data?: any) => {
+  const sendBotMessage = useCallback((text: string, type: Message["type"] = "text", data?: any) => {
     const botMsg: Message = {
       id: Date.now().toString(),
       text,
@@ -193,9 +140,9 @@ export default function ChatBot() {
       data
     };
     setMessages(prev => [...prev, botMsg]);
-  };
+  }, []);
 
-  const sendUserMessage = (text: string) => {
+  const sendUserMessage = useCallback((text: string) => {
     const userMsg: Message = {
       id: Date.now().toString(),
       text,
@@ -204,7 +151,7 @@ export default function ChatBot() {
     };
     setMessages(prev => [...prev, userMsg]);
     processUserMessage(text);
-  };
+  }, []);
 
   const processUserMessage = async (input: string) => {
     setIsTyping(true);
