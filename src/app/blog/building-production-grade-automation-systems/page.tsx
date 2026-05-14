@@ -32,28 +32,28 @@ export default function BlogPostPage() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="prose prose-lg max-w-none"
         >
-          <p className="text-gray-700 leading-relaxed mb-6">
-             After building over 50 automation systems across various industries, I've identified key patterns that separate 
-             successful implementations from failed ones. This article distills those lessons into actionable guidance for 
-             anyone looking to build production-grade automation.
-           </p>
-          
-           <h2 className="text-2xl font-cinzel font-bold text-primary-start mt-8 mb-4">
-            The Foundation: Understanding the Problem Domain
-          </h2>
            <p className="text-gray-700 leading-relaxed mb-6">
-             The first and most critical step in building automation systems is deeply understanding the problem domain. 
-             This goes beyond surface-level requirements gathering—it requires immersing yourself in the client's daily 
-             operations, pain points, and existing workflows.
-           </p>
-          
-           <h2 className="text-2xl font-cinzel font-bold text-primary-start mt-8 mb-4">
-            Architecture Patterns That Scale
-          </h2>
-           <p className="text-gray-700 leading-relaxed mb-6">
-             Through extensive experience, I've identified several architecture patterns that consistently lead to 
-             successful automation systems:
-           </p>
+              After building over 50 automation systems across various industries, I&apos;ve identified key patterns that separate 
+              successful implementations from failed ones. This article distills those lessons into actionable guidance for 
+              anyone looking to build production-grade automation.
+            </p>
+           
+            <h2 className="text-2xl font-cinzel font-bold text-primary-start mt-8 mb-4">
+             The Foundation: Understanding the Problem Domain
+           </h2>
+            <p className="text-gray-700 leading-relaxed mb-6">
+              The first and most critical step in building automation systems is deeply understanding the problem domain. 
+              This goes beyond surface-level requirements gathering—it requires immersing yourself in the client&apos;s daily 
+              operations, pain points, and existing workflows.
+            </p>
+           
+            <h2 className="text-2xl font-cinzel font-bold text-primary-start mt-8 mb-4">
+             Architecture Patterns That Scale
+           </h2>
+            <p className="text-gray-700 leading-relaxed mb-6">
+              Through extensive experience, I&apos;ve identified several architecture patterns that consistently lead to 
+              successful automation systems:
+            </p>
            <ul className="list-disc pl-6 text-gray-700 mb-6 space-y-2">
             <li><strong>Event-driven architecture</strong> - Decoupling components through events enables better scalability and fault tolerance</li>
             <li><strong>Modular pipeline design</strong> - Breaking complex workflows into independent, testable modules</li>

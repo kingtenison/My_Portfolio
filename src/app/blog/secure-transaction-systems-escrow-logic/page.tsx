@@ -41,11 +41,11 @@ export default function BlogPostPage() {
            <h2 className="text-2xl font-cinzel font-bold text-primary-start mt-8 mb-4">
             The Escrow Problem
           </h2>
-           <p className="text-gray-700 leading-relaxed mb-6">
-             In any peer-to-peer marketplace, both buyers and sellers face the same fundamental risk: 
-             "What if the other party doesn't hold up their end of the deal?" Traditional escrow services 
-             solve this by holding funds in a neutral account until both parties confirm satisfaction.
-           </p>
+            <p className="text-gray-700 leading-relaxed mb-6">
+              In any peer-to-peer marketplace, both buyers and sellers face the same fundamental risk: 
+              &quot;What if the other party doesn&apos;t hold up their end of the deal?&quot; Traditional escrow services 
+              solve this by holding funds in a neutral account until both parties confirm satisfaction.
+            </p>
           
            <h2 className="text-2xl font-cinzel font-bold text-primary-start mt-8 mb-4">
             Architecture Overview
@@ -83,11 +83,11 @@ export default function BlogPostPage() {
            <h2 className="text-2xl font-cinzel font-bold text-primary-start mt-8 mb-4">
             Lessons Learned
           </h2>
-           <p className="text-gray-700 leading-relaxed mb-6">
-             Building this system taught me that the hardest part of escrow isn't the technology—it's the edge cases. 
-             What happens when a buyer never confirms? When a seller becomes unresponsive? When network failures 
-             interrupt a transaction mid-process? These scenarios required extensive error handling and fallback mechanisms.
-           </p>
+            <p className="text-gray-700 leading-relaxed mb-6">
+              Building this system taught me that the hardest part of escrow isn&apos;t the technology—it&apos;s the edge cases. 
+              What happens when a buyer never confirms? When a seller becomes unresponsive? When network failures 
+              interrupt a transaction mid-process? These scenarios required extensive error handling and fallback mechanisms.
+            </p>
         </motion.div>
 
         <motion.div

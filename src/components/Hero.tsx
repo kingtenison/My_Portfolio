@@ -2,7 +2,14 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import Button from "@/components/Button";
+
+// Dynamically import FloatingShapes to avoid SSR hydration mismatch
+const FloatingShapes = dynamic(() => import("@/components/FloatingShapes"), {
+  ssr: false,
+  loading: () => null,
+});
 
 const Hero = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -20,7 +27,7 @@ const Hero = () => {
   }, [isInView, videoLoaded]);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary-start/30 via-accent-purple/20 to-gold/10">
       {/* Video Background */}
       <div className="absolute inset-0">
         <video
@@ -30,11 +37,15 @@ const Hero = () => {
           muted
           playsInline
           className="absolute inset-0 w-full h-full object-cover scale-105"
-          style={{ filter: "brightness(0.4) contrast(1.2)" }}
+          style={{ 
+            filter: "brightness(0.4) contrast(1.2)",
+          }}
           disablePictureInPicture
-          preload="auto"
+          preload="metadata"
+          onLoadedData={() => setVideoLoaded(true)}
+          poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 1080'%3E%3Cdefs%3E%3ClinearGradient id='posterGrad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2328b8d5' stop-opacity='0.3'/%3E%3Cstop offset='50%25' stop-color='%238b5cf6' stop-opacity='0.2'/%3E%3Cstop offset='100%25' stop-color='%23d4af37' stop-opacity='0.1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1920' height='1080' fill='url(%23posterGrad)'/%3E%3C/svg%3E"
         >
-          <source src="/Floating Blue Plexus.mp4" type="video/mp4" />
+          <source src="/project-screenshots/Floating%20Blue%20Plexus.mp4" type="video/mp4" />
         </video>
         
         {/* Animated gradient mesh overlay */}
@@ -59,64 +70,10 @@ const Hero = () => {
         />
       </div>
 
-      {/* Floating geometric shapes */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(6)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute rounded-full"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              width: Math.random() * 60 + 30,
-              height: Math.random() * 60 + 30,
-              background: `linear-gradient(135deg, 
-                rgba(40, 184, 213, ${Math.random() * 0.08 + 0.04}),
-                rgba(139, 92, 246, ${Math.random() * 0.08 + 0.04}))`,
-              filter: `blur(${Math.random() * 25 + 15}px)`,
-            }}
-            animate={{
-              y: [0, Math.random() * 60 - 30, 0],
-              x: [0, Math.random() * 60 - 30, 0],
-              rotate: [0, 360],
-              scale: [1, 1.1, 1],
-            }}
-            transition={{
-              duration: Math.random() * 15 + 10,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: Math.random() * 5,
-            }}
-          />
-        ))}
+       {/* Floating geometric shapes */}
+       <FloatingShapes />
 
-        {/* Floating rings */}
-        {[...Array(3)].map((_, i) => (
-          <motion.div
-            key={`ring-${i}`}
-            className="absolute border-2 border-primary-start/10 rounded-full"
-            style={{
-              left: `${20 + i * 20}%`,
-              top: `${30 + (i % 2) * 40}%`,
-              width: 120 - i * 20,
-              height: 120 - i * 20,
-            }}
-            animate={{
-              rotate: [0, 360],
-              scale: [1, 1.05, 1],
-              opacity: [0.08, 0.15, 0.08],
-            }}
-            transition={{
-              duration: 25 + i * 5,
-              repeat: Infinity,
-              ease: "linear",
-              delay: i * 0.5,
-            }}
-          />
-        ))}
-      </div>
-
-      {/* Main content */}
+       {/* Main content */}
        <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 w-full">
          <motion.div
            initial={{ opacity: 0, y: 50 }}

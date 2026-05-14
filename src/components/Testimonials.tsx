@@ -1,7 +1,5 @@
 "use client";
 
-"use client";
-
 import { motion } from "framer-motion";
 
 const testimonials = [
@@ -21,7 +19,7 @@ const testimonials = [
     title: "E-commerce Store Owner",
     company: "TechGear Online",
     avatar: "/avatars/marcus-rodriguez.jpg",
-    content: "The escrow platform Hansen built gave our customers the confidence to make higher-value transactions. We've seen a 35% increase in average order value since implementing the secure payment system.",
+    content: "The escrow platform Hansen built gave our customers the confidence to make higher-value transactions. We&apos;ve seen a 35% increase in average order value since implementing the secure payment system.",
     rating: 5,
     project: "Escrow Marketplace Platform"
   },

@@ -55,9 +55,9 @@ export default function BlogPostPage() {
            <h2 className="text-2xl font-cinzel font-bold text-primary-start mt-8 mb-4">
             The Architecture of Sophisticated Content Pipelines
           </h2>
-           <p className="text-gray-700 leading-relaxed mb-6">
-             Based on my experience building AI content systems, here's the architecture I've found most effective:
-           </p>
+            <p className="text-gray-700 leading-relaxed mb-6">
+              Based on my experience building AI content systems, here&apos;s the architecture I&apos;ve found most effective:
+            </p>
           
            <div className="bg-primary-start/5 rounded-lg p-6 mb-6">
              <h3 className="text-lg font-cinzel font-semibold text-primary-start mb-3">Pipeline Architecture</h3>

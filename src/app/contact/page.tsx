@@ -17,7 +17,7 @@ export default function Contact() {
       await new Promise(resolve => setTimeout(resolve, 1500));
       setSubmitStatus("success");
       e.currentTarget.reset();
-    } catch (error) {
+    } catch {
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
@@ -152,7 +152,7 @@ export default function Contact() {
                    name="subject"
                    required
                    className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-start focus:border-transparent transition-colors"
-                   placeholder="What's this about?"
+                    placeholder="What&apos;s this about?"
                  />
               </div>
 

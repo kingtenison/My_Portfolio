@@ -5,8 +5,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollProgress from "@/components/ScrollProgress";
 import AmbientGradientBlob from "@/components/AmbientGradientBlob";
-import ParticleBackground from "@/components/ParticleBackground";
 import ChatBotLazy from "@/components/ChatBotLazy";
+import { ChatProvider } from "@/components/ChatKnowledge";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -47,16 +47,22 @@ export default function RootLayout({
       lang="en"
       className={`${poppins.variable} ${cinzel.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
+      <head>
+        {/* Preconnect to Google Fonts */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </head>
       <body className="min-h-full flex flex-col relative">
         {/* Global ambient effects */}
         <ScrollProgress />
-        <ParticleBackground density={10} />
         <AmbientGradientBlob />
         
         <Navbar />
         <main className="flex-1 pt-16 relative z-10">{children}</main>
         <Footer />
-        <ChatBotLazy />
+        <ChatProvider>
+          <ChatBotLazy />
+        </ChatProvider>
       </body>
     </html>
   );

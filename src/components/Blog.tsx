@@ -7,7 +7,7 @@ const blogPosts = [
   {
     id: 1,
     title: "Building Production-Grade Automation Systems: Lessons from 50+ Projects",
-    excerpt: "Key patterns and anti-patterns I've discovered while building automation systems for healthcare, finance, and e-commerce clients.",
+    excerpt: "Key patterns and anti-patterns I&apos;ve discovered while building automation systems for healthcare, finance, and e-commerce clients.",
     date: "May 10, 2026",
     readTime: "8 min read",
     tags: ["Automation", "Architecture", "Best Practices"],

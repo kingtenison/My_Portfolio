@@ -1,9 +1,16 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import Button from "@/components/Button";
 import TechBadge from "./TechBadge";
+
+// Dynamically import ParticleBackground with SSR disabled to avoid hydration mismatches
+const ParticleBackground = dynamic(() => import("@/components/ParticleBackground"), {
+  ssr: false,
+  loading: () => null,
+});
 
 // Icons
 const AIIcon = () => (
@@ -179,7 +186,8 @@ const Services = () => {
   const [activeTab, setActiveTab] = useState<"fullstack" | "aiAutomation">("fullstack");
 
   return (
-    <section id="services" className="py-20 bg-white">
+    <section id="services" className="py-20 bg-white relative">
+      <ParticleBackground density={8} />
       <div className="px-4 sm:px-6 lg:px-8 w-full">
         {/* Section Header */}
         <motion.div

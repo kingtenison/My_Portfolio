@@ -33,6 +33,7 @@ export default function ImageCarousel({ images, title = "Project", className = "
             src={images[current]}
             alt={`${title} screenshot ${current + 1}`}
             className="w-full h-auto object-cover max-h-[500px]"
+            loading="lazy"
           />
         </motion.div>
       </AnimatePresence>

@@ -273,6 +273,10 @@ html {
   animation: shimmer 3s infinite;
 }
 
+.animate-shimmer {
+  animation: shimmer 2s linear infinite;
+}
+
 /* Noise texture overlay */
 .noise-bg::before {
   content: "";

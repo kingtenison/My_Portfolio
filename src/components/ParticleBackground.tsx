@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useMemo, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 interface Particle {
@@ -24,9 +24,9 @@ const colors = [
 export default function ParticleBackground({ density = 10 }: { density?: number }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(true);
-
-  // Reduce particle count significantly for performance
-  const particles = useMemo(() => {
+  const [particles, setParticles] = useState<Particle[]>(() => {
+    // Generate particles only during client render (component mounted)
+    // This initializer runs once per component lifecycle
     const arr: Particle[] = [];
     for (let i = 0; i < density; i++) {
       arr.push({
@@ -40,7 +40,7 @@ export default function ParticleBackground({ density = 10 }: { density?: number 
       });
     }
     return arr;
-  }, [density]);
+  });
 
   // Pause animations when not in viewport
   useEffect(() => {
