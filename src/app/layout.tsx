@@ -1,28 +1,13 @@
 import type { Metadata } from "next";
-import { Poppins, Cinzel, JetBrains_Mono } from "next/font/google";
+import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
+import CyberpunkNav from "@/components/CyberpunkNav";
 import Footer from "@/components/Footer";
 import ScrollProgress from "@/components/ScrollProgress";
-import AmbientGradientBlob from "@/components/AmbientGradientBlob";
 import ChatBotLazy from "@/components/ChatBotLazy";
 import { ChatProvider } from "@/components/ChatKnowledge";
+import { MouseProvider } from "@/hooks/useMousePosition";
 
-const poppins = Poppins({
-  variable: "--font-poppins",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  display: "swap",
-  preload: true,
-});
-
-const cinzel = Cinzel({
-  variable: "--font-cinzel",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-  preload: true,
-});
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-mono",
@@ -45,24 +30,24 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${poppins.variable} ${cinzel.variable} ${jetbrainsMono.variable} h-full antialiased`}
+      className={`${jetbrainsMono.variable} h-full antialiased`}
     >
       <head>
-        {/* Preconnect to Google Fonts */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.cdnfonts.com/css/robotaur" rel="stylesheet" />
+        <link href="https://fonts.cdnfonts.com/css/nexa-bold" rel="stylesheet" />
       </head>
       <body className="min-h-full flex flex-col relative">
-        {/* Global ambient effects */}
+        {/* Global effects */}
         <ScrollProgress />
-        <AmbientGradientBlob />
-        
-        <Navbar />
-        <main className="flex-1 pt-16 relative z-10">{children}</main>
-        <Footer />
-        <ChatProvider>
-          <ChatBotLazy />
-        </ChatProvider>
+
+        <MouseProvider>
+          <CyberpunkNav />
+          <main className="flex-1 pt-20 relative z-10">{children}</main>
+          <Footer />
+          <ChatProvider>
+            <ChatBotLazy />
+          </ChatProvider>
+        </MouseProvider>
       </body>
     </html>
   );

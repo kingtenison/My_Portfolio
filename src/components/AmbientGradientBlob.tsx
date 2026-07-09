@@ -9,7 +9,7 @@ export default function AmbientGradientBlob() {
       <motion.div
         className="absolute w-[600px] h-[600px] rounded-full blur-[120px] opacity-20"
         style={{
-          background: "radial-gradient(circle, rgba(40, 184, 213, 0.4) 0%, transparent 70%)",
+          background: "radial-gradient(circle, #0320fc 0%, transparent 70%)",
           top: "-200px",
           left: "-200px",
         }}
@@ -28,7 +28,7 @@ export default function AmbientGradientBlob() {
       <motion.div
         className="absolute w-[500px] h-[500px] rounded-full blur-[100px] opacity-15"
         style={{
-          background: "radial-gradient(circle, rgba(139, 92, 246, 0.4) 0%, transparent 70%)",
+          background: "radial-gradient(circle, #03c2fc 0%, transparent 70%)",
           bottom: "-150px",
           right: "-150px",
         }}
@@ -48,7 +48,7 @@ export default function AmbientGradientBlob() {
       <motion.div
         className="absolute w-[400px] h-[400px] rounded-full blur-[80px] opacity-12"
         style={{
-          background: "radial-gradient(circle, rgba(236, 72, 153, 0.3) 0%, transparent 70%)",
+          background: "radial-gradient(circle, #14b8a6 0%, transparent 70%)",
           top: "40%",
           left: "50%",
           transform: "translate(-50%, -50%)",
@@ -68,7 +68,7 @@ export default function AmbientGradientBlob() {
       <motion.div
         className="absolute w-[350px] h-[350px] rounded-full blur-[60px] opacity-10"
         style={{
-          background: "radial-gradient(circle, rgba(212, 175, 55, 0.3) 0%, transparent 70%)",
+          background: "radial-gradient(circle, #14b8a6 0%, transparent 70%)",
           bottom: "20%",
           left: "10%",
         }}

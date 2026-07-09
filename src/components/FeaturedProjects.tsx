@@ -1,249 +1,160 @@
 "use client";
 
-import { motion } from "framer-motion";
-import Link from "next/link";
-import Button from "@/components/Button";
-import TechBadge from "@/components/TechBadge";
+import { useRef, useState, useEffect } from "react";
 
 const featuredProjects = [
   {
-    title: "Restaurant Ordering Platform",
-    description: "Fully-featured restaurant website with online ordering, table reservations, menu management, and integrated payment processing for seamless customer experience.",
-    url: "https://fable-os.vercel.app/",
-    type: "web",
-    tech: ["React", "Node.js", "MongoDB", "Stripe"]
+    title: "Hospital Management System",
+    description: "Full-spectrum hospital management system — patient records, appointment scheduling, staff coordination, and real-time reporting.",
+    tech: ["React", "Node.js", "MongoDB", "REST API"],
+    url: "https://frontend-vert-one-84.vercel.app/",
+    type: "Clinic Management System",
   },
   {
     title: "Escrow Marketplace Platform",
-    description: "Secure buyer-seller transaction platform with multi-step fund holding and automated release logic.",
+    description: "Multi-step escrow platform with secure fund holds, milestone-based release logic, and dispute resolution for buyer-seller transactions.",
+    tech: ["React", "Node.js", "MongoDB", "Stripe"],
     url: "https://escrow-tan.vercel.app/",
-    type: "web",
-    tech: ["React", "Node.js", "MongoDB", "Stripe"]
+    type: "Escrow & Transaction Platform",
   },
   {
-    title: "Link Shortener Platform",
-    description: "URL shortening with custom aliases, real-time analytics dashboard, QR code generation, and expiry controls.",
+    title: "Link Shortener & Analytics Platform",
+    description: "Smart URL shortener with custom aliases, real-time click analytics, built-in QR code generator, and configurable link expiration.",
+    tech: ["React", "Node.js", "MongoDB", "Chart.js"],
     url: "https://link-platform-two.vercel.app/dashboard",
-    type: "web",
-    tech: ["React", "Node.js", "MongoDB", "Google Analytics"]
+    type: "URL Link Shortener",
   },
   {
-    title: "File Converter Web App",
-    description: "Multi-format file conversion tool with drag-and-drop UI, server-side processing, and instant download.",
-    url: "https://fileforge-iota.vercel.app",
-    type: "web",
-    tech: ["React", "Node.js"]
-  }
+    title: "Restaurant Ordering Platform",
+    description: "End-to-end restaurant ordering ecosystem — online ordering, table reservations, menu management, staff portal, and integrated payments.",
+    tech: ["React", "Node.js", "MongoDB", "Stripe"],
+    url: "https://fable-os.vercel.app/",
+    type: "Restaurant Management System",
+  },
+  {
+    title: "AWG Corporate Website",
+    description: "Corporate brand platform for atmospheric water generators — product showcase, lead capture, and B2B inquiry management.",
+    tech: ["React", "Node.js", "Email API", "Lead Gen"],
+    url: "https://awg-virid.vercel.app/",
+    type: "B2B Corporate Website",
+  },
+  {
+    title: "Data Analysis & Visualization Tool",
+    description: "Interactive data analysis workspace supporting CSV/JSON import, multi-chart visualizations, and real-time data filtering.",
+    tech: ["React", "Node.js", "D3.js / Recharts"],
+    url: "https://prophet-delta.vercel.app/",
+    type: "Data Analysis Tool",
+  },
 ];
 
-const FeaturedProjects = () => {
+function ProjectPreview({ project, index }: { project: typeof featuredProjects[0]; index: number }) {
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const [scale, setScale] = useState(0.25);
+
+  useEffect(() => {
+    const el = wrapperRef.current;
+    if (!el) return;
+    const observer = new ResizeObserver((entries) => {
+      const w = entries[0].contentRect.width;
+      setScale(Math.min(w / 1280, 1));
+    });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-      <section className="relative py-32 overflow-hidden">
-        {/* Animated background */}
-        <div className="absolute inset-0 mesh-gradient opacity-30" />
-        
-        {/* Floating orbs - reduced for performance */}
-        <div className="absolute inset-0 pointer-events-none">
-          {[...Array(3)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute rounded-full blur-3xl opacity-10"
-              style={{
-                width: 300 + i * 50,
-                height: 300 + i * 50,
-                left: `${i * 30}%`,
-                top: `${i % 2 === 0 ? 10 : 70}%`,
-                background: `radial-gradient(circle, 
-                  ${i % 2 === 0 ? "rgba(40,184,213,0.25)" : "rgba(139,92,246,0.25)"}, 
-                  transparent 70%)`,
-              }}
-              animate={{
-                y: [0, 30, 0],
-                x: [0, 20, 0],
-                scale: [1, 1.1, 1],
-              }}
-              transition={{
-                duration: 18 + i * 3,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: i * 0.5,
-              }}
-            />
+    <div
+      className="relative border border-[#E5E7EB] bg-[#F5F5F0] flex flex-col transition-colors duration-100 hover:border-[#FEE2E2] group"
+      style={{ clipPath: "polygon(24px 0, 100% 0, 100% calc(100% - 24px), calc(100% - 24px) 100%, 0 100%, 0 24px)" }}
+    >
+      {/* Preview / iframe area */}
+      <div ref={wrapperRef} className="relative w-full overflow-hidden bg-[#000000]" style={{ height: Math.round(720 * scale) }}>
+        <div className="absolute top-0 left-0 origin-top-left" style={{ width: 1280, height: 720, transform: `scale(${scale})` }}>
+          <iframe
+            src={project.url}
+            style={{ width: 1280, height: 720, border: 0 }}
+            sandbox="allow-scripts allow-same-origin allow-forms"
+            title={project.title}
+          />
+        </div>
+      </div>
+
+      {/* Info bar */}
+      <div className="p-3 lg:p-6 flex flex-col gap-2 lg:gap-4">
+        <div className="flex items-center justify-between">
+          <span className="text-[10px] lg:text-sm font-mono tracking-[0.15em] text-[#DC2626] uppercase font-semibold">{project.type}</span>
+          <span className="text-[#6B7280] font-mono text-xs lg:text-base tracking-wider">{String(index + 1).padStart(2, "0")}</span>
+        </div>
+        <p className="text-[10px] lg:text-sm font-mono text-[#6B7280] leading-relaxed line-clamp-2">{project.description}</p>
+        <div className="flex flex-wrap gap-1 lg:gap-2">
+          {project.tech.map((t) => (
+            <span
+              key={t}
+              className="text-[9px] lg:text-sm font-mono px-1.5 py-0.5 lg:px-3 lg:py-1.5 border border-[#E5E7EB] text-[#6B7280]"
+              style={{ clipPath: "polygon(6px 0, 100% 0, 100% 100%, 0 100%, 0 6px)" }}
+            >
+              {t}
+            </span>
           ))}
         </div>
-
-        <div className="relative z-10 px-4 sm:px-6 lg:px-8 w-full">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-20"
-          >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="inline-block mb-4"
-            >
-              <span className="px-4 py-1.5 rounded-full text-sm font-semibold uppercase tracking-wider bg-gradient-to-r from-primary-start/20 to-accent-purple/20 text-primary-start border border-primary-start/30">
-                Selected Works
-              </span>
-            </motion.div>
-
-             <h2 className="text-[2.1375rem] sm:text-[2.85rem] lg:text-[3.5625rem] font-cinzel font-bold text-primary-start mb-6 font-beyonders">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary-start via-accent-purple to-gold">
-                Featured Projects
-              </span>
-            </h2>
-              
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              Interactive previews of my automation systems and web applications
-            </p>
-            
-            <motion.div
-              className="w-32 h-1 bg-gradient-to-r from-primary-start via-gold to-accent-purple mx-auto mt-8 rounded-full"
-              initial={{ scaleX: 0 }}
-              whileInView={{ scaleX: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-            />
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
-            {featuredProjects.map((project, index) => (
-              <motion.div
-                key={project.title}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ 
-                  duration: 0.6, 
-                  delay: index * 0.15,
-                  ease: [0.25, 0.46, 0.45, 0.94]
-                }}
-                viewport={{ once: true, margin: "-100px" }}
-                className="group relative bg-white/90 backdrop-blur-xl rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100/60 depth-shadow"
-              >
-                {/* Gradient top border */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-start via-accent-purple to-gold" />
-                
-                {/* Hover gradient overlay */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-br from-primary-start/5 via-accent-purple/5 to-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                />
-                
-                <div className="p-8 relative">
-                  {/* Header */}
-                  <div className="flex items-start justify-between mb-4">
-                    <h3 className="text-2xl font-cinzel font-bold text-primary-start group-hover:text-gold transition-colors">
-                      {project.title}
-                    </h3>
-                    <motion.div
-                      className="w-10 h-10 rounded-full bg-gradient-to-br from-primary-start/10 to-accent-purple/10 flex items-center justify-center border border-primary-start/20"
-                      whileHover={{ rotate: 180, scale: 1.1 }}
-                      transition={{ duration: 0.4 }}
-                    >
-                      <svg className="w-5 h-5 text-primary-start" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
-                    </motion.div>
-                  </div>
-                  
-                  <p className="text-gray-700 leading-relaxed mb-6">
-                    {project.description}
-                  </p>
-                  
-                  {/* Tech badges */}
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.tech.map((tech) => (
-                      <TechBadge key={tech} name={tech} size="md" />
-                    ))}
-                  </div>
-                  
-                  {/* IFRAME Preview */}
-                  <motion.div
-                    className="mb-6 rounded-xl overflow-hidden border border-gray-200/60 bg-gray-50"
-                    whileHover={{ scale: 1.01 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <iframe
-                      src={project.url}
-                      className="w-full aspect-video border-none"
-                      title={project.title}
-                      loading="lazy"
-                    />
-                  </motion.div>
-                  
-                  {/* Action buttons */}
-                  <div className="flex flex-wrap justify-between items-center gap-4 pt-4 border-t border-gray-100">
-                    <Link
-                      href={project.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group/link inline-flex items-center gap-2 text-primary-start font-semibold hover:text-gold transition-colors"
-                    >
-                      <span>View Live</span>
-                      <motion.svg
-                        className="w-4 h-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        whileHover={{ x: 3 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                      </motion.svg>
-                    </Link>
-                    
-                    <Link
-                      href="/projects"
-                      className="text-gray-600 hover:text-primary-start font-medium transition-colors text-sm uppercase tracking-wider"
-                    >
-                      More Projects →
-                    </Link>
-                  </div>
-                </div>
-                
-                {/* Bottom glow effect */}
-                <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-primary-start/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-            className="text-center mt-16"
-          >
-            <motion.div
-              whileHover={{ scale: 1.05, y: -3 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <Button 
-                onClick={() => window.location.href = '/projects'} 
-                variant="primary" 
-                size="lg"
-                className="shadow-2xl group-btn"
-              >
-                Explore All Projects
-                <motion.svg
-                  className="w-5 h-5 ml-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  whileHover={{ x: 3 }}
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </motion.svg>
-              </Button>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
+        <a
+          href={project.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 lg:gap-3 text-xs lg:text-base font-mono tracking-[0.15em] uppercase text-[#6B7280] hover:text-[#DC2626] transition-colors duration-100 mt-auto"
+        >
+          <span className="text-[#DC2626] text-sm lg:text-xl font-bold">[</span>
+          Visit
+          <span className="text-[#DC2626] text-sm lg:text-xl font-bold">]</span>
+        </a>
+      </div>
+    </div>
   );
-};
+}
 
-export default FeaturedProjects;
+export default function FeaturedProjects() {
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+
+  return (
+    <section ref={sectionRef} className="relative overflow-hidden bg-[#000000] py-20 lg:py-32 px-6 lg:px-10">
+      {/* Background HUD lines */}
+      <div className="absolute top-0 left-0 w-full h-px bg-[#DC2626] opacity-[0.04] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-full h-px bg-[#DC2626] opacity-[0.04] pointer-events-none" />
+
+      {/* Section header */}
+      <div className="relative z-10 mb-20">
+        <div className="flex items-center gap-4 mb-5">
+          <span className="text-[#DC2626] font-mono text-xl tracking-[0.15em] font-bold">[</span>
+          <span className="text-base font-mono tracking-[0.25em] text-[#9CA3AF] uppercase">Deployments</span>
+          <span className="text-[#DC2626] font-mono text-xl tracking-[0.15em] font-bold">]</span>
+          <span className="h-px flex-1 bg-[#333333]" />
+        </div>
+        <h2 className="font-serif text-4xl sm:text-5xl font-bold text-[#FFFFFF] tracking-tight uppercase">
+          Featured Work
+        </h2>
+        <p className="mt-4 text-lg font-mono text-[#9CA3AF] max-w-lg">
+          Live production systems and applications I&apos;ve designed and built.
+        </p>
+      </div>
+
+      {/* 3x2 iframe grid */}
+      <div className="relative z-10 grid grid-cols-2 lg:grid-cols-3 gap-8">
+        {featuredProjects.map((project, i) => (
+          <ProjectPreview key={project.title} project={project} index={i} />
+        ))}
+      </div>
+
+      {/* View all link */}
+      <div className="relative z-10 flex justify-center mt-16">
+        <a
+          href="/projects"
+          className="inline-flex items-center gap-4 text-lg font-mono tracking-[0.2em] uppercase text-[#9CA3AF] hover:text-[#DC2626] transition-colors duration-100 font-semibold"
+        >
+          <span className="text-[#DC2626] text-2xl font-bold">[</span>
+          View All Projects
+          <span className="text-[#DC2626] text-2xl font-bold">]</span>
+        </a>
+      </div>
+    </section>
+  );
+}

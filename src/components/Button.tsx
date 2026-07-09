@@ -39,22 +39,22 @@ const Button = ({
     primary: `
       bg-gradient-to-r from-primary-start to-primary-end
       bg-[length:200%_100%]
-      hover:from-primary-start hover:to-gold
+      hover:from-primary-start hover:to-accent-teal
       text-white
       border-2 border-primary-start
-      hover:border-gold
-      shadow-[0_4px_12px_rgba(30,58,95,0.25)]
-      hover:shadow-[0_8px_24px_rgba(212,175,55,0.35)]
+      hover:border-accent-teal
+      shadow-[0_4px_12px_rgba(3,32,252,0.25)]
+      hover:shadow-[0_8px_24px_rgba(20,184,166,0.35)]
     `,
     secondary: `
-      bg-gradient-to-r from-gold to-gold
+      bg-gradient-to-r from-accent-teal to-accent-teal
       bg-[length:200%_100%]
-      hover:from-gold hover:to-primary-start
+      hover:from-accent-teal hover:to-primary-start
       text-primary-start
-      border-2 border-gold
+      border-2 border-accent-teal
       hover:border-primary-start
-      shadow-[0_4px_12px_rgba(212,175,55,0.25)]
-      hover:shadow-[0_8px_24px_rgba(30,58,95,0.35)]
+      shadow-[0_4px_12px_rgba(20,184,166,0.25)]
+      hover:shadow-[0_8px_24px_rgba(3,32,252,0.35)]
     `,
     outline: `
       bg-transparent
@@ -73,13 +73,13 @@ const Button = ({
       shadow-none
     `,
     gradient: `
-      bg-gradient-to-r from-primary-start via-accent-purple to-gold
+      bg-gradient-to-r from-primary-start via-accent-purple to-accent-teal
       bg-[length:200%_100%]
-      hover:from-primary-start hover:via-accent-purple hover:to-gold
+      hover:from-primary-start hover:via-accent-purple hover:to-accent-teal
       text-white
       border-2 border-primary-start/30
-      shadow-[0_4px_15px_rgba(40,184,213,0.3)]
-      hover:shadow-[0_8px_30px_rgba(139,92,246,0.4)]
+      shadow-[0_4px_15px_rgba(3,32,252,0.3)]
+      hover:shadow-[0_8px_30px_rgba(20,184,166,0.4)]
       animate-gradient-x
     `,
   };
@@ -147,7 +147,7 @@ const Button = ({
       {/* Glow effect for primary variant */}
       {variant === "primary" && (
         <motion.div
-          className="absolute -inset-1 rounded-lg bg-gradient-to-r from-gold/20 to-gold/20 opacity-0 group-hover:opacity-100 blur-md -z-10"
+          className="absolute -inset-1 rounded-lg bg-gradient-to-r from-accent-teal/20 to-accent-teal/20 opacity-0 group-hover:opacity-100 blur-md -z-10"
           transition={{ duration: 0.3 }}
         />
       )}

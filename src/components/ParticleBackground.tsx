@@ -14,33 +14,36 @@ interface Particle {
 }
 
 const colors = [
-  "rgba(40, 184, 213, 0.5)",
-  "rgba(14, 165, 233, 0.5)",
-  "rgba(139, 92, 246, 0.5)",
-  "rgba(212, 175, 55, 0.4)",
-  "rgba(20, 184, 166, 0.4)",
+  "rgba(3, 32, 252, 0.5)",
+  "rgba(3, 194, 252, 0.5)",
+  "rgba(3, 194, 252, 0.5)",
+  "rgba(252, 3, 3, 0.4)",
+  "rgba(252, 3, 3, 0.4)",
 ];
 
 export default function ParticleBackground({ density = 10 }: { density?: number }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(true);
-  const [particles, setParticles] = useState<Particle[]>(() => {
-    // Generate particles only during client render (component mounted)
-    // This initializer runs once per component lifecycle
-    const arr: Particle[] = [];
-    for (let i = 0; i < density; i++) {
-      arr.push({
-        id: i,
-        x: Math.random() * 100,
-        y: Math.random() * 100,
-        size: Math.random() * 3 + 2,
-        duration: Math.random() * 20 + 10,
-        delay: Math.random() * 10,
-        color: colors[Math.floor(Math.random() * colors.length)],
-      });
-    }
-    return arr;
-  });
+  const [particles, setParticles] = useState<Particle[]>([]);
+  // Generate particles only after mount (avoid Math.random during render)
+  useEffect(() => {
+    const id = setTimeout(() => {
+      const arr: Particle[] = [];
+      for (let i = 0; i < density; i++) {
+        arr.push({
+          id: i,
+          x: Math.random() * 100,
+          y: Math.random() * 100,
+          size: Math.random() * 3 + 2,
+          duration: Math.random() * 20 + 10,
+          delay: Math.random() * 10,
+          color: colors[Math.floor(Math.random() * colors.length)],
+        });
+      }
+      setParticles(arr);
+    }, 0);
+    return () => clearTimeout(id);
+  }, [density]);
 
   // Pause animations when not in viewport
   useEffect(() => {

@@ -123,7 +123,7 @@ export default function TechBadge({ name, size = "md" }: TechBadgeProps) {
    if (IconComponent) {
      return (
        <div
-         className="inline-flex items-center gap-2 px-3 py-1.5 bg-primary-start/5 border border-primary-start/10 rounded-full transition-all duration-300 hover:bg-primary-start/10 hover:border-primary-start/20 group text-primary-start group-hover:text-gold/90"
+          className="inline-flex items-center gap-2 px-3 py-1.5 bg-primary-start/5 border border-primary-start/10 rounded-full transition-all duration-300 hover:bg-primary-start/10 hover:border-primary-start/20 group text-primary-start group-hover:text-accent-teal/90"
        >
         <IconComponent
           className={`${sizeClasses[size]} transition-transform duration-300 group-hover:scale-110`}

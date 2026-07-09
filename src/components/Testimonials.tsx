@@ -45,13 +45,13 @@ export default function Testimonials() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-           <h2 className="text-[1.78125rem] sm:text-[2.1375rem] font-cinzel font-bold text-primary-start mb-6 font-beyonders">
+           <h2 className="text-[1.5rem] sm:text-[1.875rem] font-cinzel font-bold text-primary-start mb-6 font-beyonders">
             What Clients Say
           </h2>
            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
              Real results from real projects that drove measurable business impact
            </p>
-          <div className="w-24 h-1 bg-gold mx-auto mt-6"></div>
+          <div className="w-24 h-1 bg-accent-teal mx-auto mt-6"></div>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -80,7 +80,7 @@ export default function Testimonials() {
                     {[1, 2, 3, 4, 5].map((star) => (
                       <span
                         key={star}
-                        className="text-gold"
+                        className="text-accent-teal"
                         aria-hidden="true"
                       >
                         {star <= testimonial.rating ? "★" : "☆"}
@@ -91,7 +91,7 @@ export default function Testimonials() {
               </div>
               
                <p className="text-gray-700 italic mb-4 leading-relaxed">
-                 "{testimonial.content}"
+                 &ldquo;{testimonial.content}&rdquo;
                </p>
                
                <div className="text-sm text-gray-600">

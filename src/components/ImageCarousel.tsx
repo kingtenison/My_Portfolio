@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface ImageCarouselProps {
@@ -29,11 +30,12 @@ export default function ImageCarousel({ images, title = "Project", className = "
           transition={{ duration: 0.4, ease: "easeInOut" }}
           className="w-full"
         >
-          <img
+          <Image
             src={images[current]}
             alt={`${title} screenshot ${current + 1}`}
+            width={800}
+            height={500}
             className="w-full h-auto object-cover max-h-[500px]"
-            loading="lazy"
           />
         </motion.div>
       </AnimatePresence>
@@ -71,7 +73,7 @@ export default function ImageCarousel({ images, title = "Project", className = "
                 onClick={() => setCurrent(idx)}
                 className={`w-2 h-2 rounded-full transition-all duration-300 ${
                   idx === current
-                    ? "bg-gold w-4"
+                    ? "bg-accent-teal w-4"
                     : "bg-white/60 hover:bg-white/80"
                 }`}
                 aria-label={`Go to slide ${idx + 1}`}

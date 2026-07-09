@@ -1,9 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
-import Button from "@/components/Button";
-import TechBadge from "@/components/TechBadge";
 
 const projects = [
   {
@@ -52,13 +49,6 @@ const projects = [
     link: "https://awg-virid.vercel.app/",
   },
   {
-    title: "Link Shortener Platform",
-    description: "Production-grade URL shortener with custom aliases, real-time click analytics, QR code generation, and expiry controls.",
-    tech: ["React", "Node.js", "MongoDB", "Analytics"],
-    outcome: "Clean dashboard for link management with high throughput redirect resolution.",
-    link: "https://link-platform-two.vercel.app/dashboard",
-  },
-  {
     title: "Data Analysis Tool",
     description: "Interactive data analysis and visualisation platform supporting CSV/JSON import, dashboard creation, charting, and real-time filtering.",
     tech: ["React", "Node.js", "D3.js / Recharts"],
@@ -81,79 +71,102 @@ const projects = [
   },
 ];
 
+const Crosshair = () => (
+  <svg className="absolute top-3 right-3 w-4 h-4 text-[#E5E7EB]" viewBox="0 0 16 16" fill="none">
+    <line x1="8" y1="0" x2="8" y2="16" stroke="currentColor" strokeWidth="1" />
+    <line x1="0" y1="8" x2="16" y2="8" stroke="currentColor" strokeWidth="1" />
+    <circle cx="8" cy="8" r="2" stroke="currentColor" strokeWidth="1" fill="none" />
+  </svg>
+);
+
 export default function Projects() {
   return (
-      <div className="min-h-screen bg-white">
-      <div className="px-4 sm:px-6 lg:px-8 py-20">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-           <h1 className="text-4xl sm:text-5xl font-cinzel font-bold text-primary-start mb-6">
-            My Projects
-          </h1>
-           <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-             Showcasing innovative solutions in automation, web development, and AI integration
-           </p>
-          <div className="w-24 h-1 bg-gold mx-auto mt-6"></div>
-        </motion.div>
+    <div className="min-h-screen bg-[#000000] px-6 lg:px-10 py-20">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="mb-16"
+      >
+        <p className="font-mono tracking-[0.15em] uppercase text-[#DC2626] text-sm mb-4">[ 0x02 ]</p>
+        <h1 className="font-serif uppercase text-[#FFFFFF] text-4xl sm:text-5xl lg:text-6xl leading-none mb-4">
+          My Projects
+        </h1>
+        <div className="w-full h-px bg-[#333333]" />
+      </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-card-bg rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100"
-            >
-              <div className="p-6">
-                 <h3 className="text-xl font-cinzel font-semibold text-primary-start mb-3">
-                  {project.title}
-                </h3>
-                 <p className="text-gray-700 mb-4 leading-relaxed">
-                   {project.description}
-                 </p>
-
-                {project.problem && (
-                  <div className="mb-4">
-                    <h4 className="text-sm font-semibold text-gold mb-1">Problem Solved:</h4>
-                     <p className="text-sm text-gray-700">{project.problem}</p>
-                  </div>
-                )}
-
-                {project.outcome && (
-                  <div className="mb-4">
-                    <h4 className="text-sm font-semibold text-gold mb-1">Outcome:</h4>
-                    <p className="text-sm text-gray-700">{project.outcome}</p>
-                  </div>
-                )}
-
-                <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-gold mb-2">Technologies:</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech) => (
-                      <TechBadge key={tech} name={tech} size="sm" />
-                    ))}
-                  </div>
-                </div>
-
-                {project.link && (
-                  <div className="flex justify-end">
-                    <Button onClick={() => window.open(project.link, '_blank')} variant="outline" size="sm" iconPosition="right">
-                      View Project
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
-                    </Button>
-                  </div>
-                )}
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {projects.map((project, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: index * 0.1 }}
+            style={{ clipPath: "polygon(24px 0, 100% 0, 100% calc(100% - 24px), calc(100% - 24px) 100%, 0 100%, 0 24px)" }}
+            className="relative bg-[#F5F5F0] border border-[#E5E7EB]"
+          >
+            <Crosshair />
+            <div className="p-6">
+              <div className="flex items-center justify-between mb-4">
+                <span className="font-mono tracking-[0.15em] uppercase text-[#DC2626] text-xs">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <span className="font-mono tracking-[0.15em] uppercase text-[#6B7280] text-[10px] border border-[#E5E7EB] px-2 py-0.5">
+                  Project
+                </span>
               </div>
-            </motion.div>
-          ))}
-        </div>
+
+              <h3 className="font-serif uppercase text-[#111827] text-lg mb-3 leading-tight">
+                {project.title}
+              </h3>
+
+              <p className="font-sans text-[#6B7280] text-sm leading-relaxed mb-4">
+                {project.description}
+              </p>
+
+              {project.problem && (
+                <div className="mb-3 border-l-2 border-[#DC2626] pl-3">
+                  <p className="font-mono tracking-[0.15em] uppercase text-[#DC2626] text-[10px] mb-1">
+                    Problem
+                  </p>
+                  <p className="font-sans text-[#6B7280] text-sm">{project.problem}</p>
+                </div>
+              )}
+
+              {project.outcome && (
+                <div className="mb-4 border-l-2 border-[#E5E7EB] pl-3">
+                  <p className="font-mono tracking-[0.15em] uppercase text-[#6B7280] text-[10px] mb-1">
+                    Outcome
+                  </p>
+                  <p className="font-sans text-[#6B7280] text-sm">{project.outcome}</p>
+                </div>
+              )}
+
+              <div className="flex flex-wrap gap-2 mb-5">
+                {project.tech.map((tech) => (
+                  <span
+                    key={tech}
+                    style={{ clipPath: "polygon(6px 0, 100% 0, 100% 100%, 0 100%, 0 6px)" }}
+                    className="inline-block font-mono tracking-[0.15em] uppercase text-[10px] bg-[#000000] text-[#9CA3AF] border border-[#333333] px-2 py-1"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              {project.link && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block font-mono tracking-[0.15em] uppercase text-sm hover:text-[#DC2626] transition-colors duration-200"
+                >
+                  <span className="text-[#DC2626]">[</span> View Project <span className="text-[#DC2626]">]</span>
+                </a>
+              )}
+            </div>
+          </motion.div>
+        ))}
       </div>
     </div>
   );

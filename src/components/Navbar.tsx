@@ -2,10 +2,13 @@
 
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
 
   const navItems = [
     { href: "/", label: "Home" },
@@ -16,12 +19,30 @@ const Navbar = () => {
     { href: "/contact", label: "Contact" },
   ];
 
+  // Track scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className="fixed top-0 w-full z-50 transition-all duration-300">
-      <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary-start via-accent-teal to-accent-purple opacity-80" />
-      <div className="backdrop-blur-xl bg-white/70 border-b border-gray-200/50">
+    <nav className="fixed top-0 w-full z-50 transition-all duration-500">
+      <div className={`
+        transition-all duration-500
+        ${isScrolled 
+          ? "backdrop-blur-2xl bg-white/80 shadow-[0_1px_0_rgba(0,0,0,0.05)]" 
+          : "backdrop-blur-0 bg-white/50"
+        }
+      `}>
+        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary-start/50 via-accent-purple/30 via-accent-teal/50 to-transparent opacity-60" />
+        
         <div className="px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
+            {/* Logo */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -36,36 +57,65 @@ const Navbar = () => {
                 </span>
               </Link>
             </motion.div>
+
+            {/* Desktop Nav */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
               className="hidden md:flex items-center space-x-1"
             >
-              {navItems.map((item, index) => (
-                <motion.div
-                  key={item.href}
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: 0.2 + index * 0.05 }}
-                  className="relative"
-                >
-                  <Link
-                    href={item.href}
-                    className="px-4 py-2 rounded-lg text-gray-700 hover:text-primary-start font-medium transition-all duration-300 relative group"
+              {navItems.map((item, index) => {
+                const isActive = pathname === item.href || 
+                  (item.href !== "/" && pathname?.startsWith(item.href));
+                
+                return (
+                  <motion.div
+                    key={item.href}
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: 0.2 + index * 0.05 }}
+                    className="relative"
                   >
-                    <span className="relative z-10">{item.label}</span>
-                    <motion.div
-                      className="absolute inset-0 rounded-lg bg-gradient-to-r from-primary-start/10 to-accent-purple/10"
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      whileHover={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.2 }}
-                      style={{ zIndex: -1 }}
-                    />
-                  </Link>
-                </motion.div>
-              ))}
+                    <Link
+                      href={item.href}
+                      className={`
+                        px-4 py-2 rounded-lg font-medium transition-all duration-300 relative group
+                        ${isActive 
+                          ? "text-primary-start" 
+                          : "text-gray-700 hover:text-primary-start"
+                        }
+                      `}
+                    >
+                      <span className="relative z-10">{item.label}</span>
+                      
+                      {/* Active indicator */}
+                      {isActive && (
+                        <motion.div
+                          layoutId="activeNavIndicator"
+                          className="absolute inset-0 rounded-lg bg-gradient-to-r from-primary-start/10 to-accent-purple/10"
+                          transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                          style={{ zIndex: -1 }}
+                        />
+                      )}
+                      
+                      {/* Hover background */}
+                      {!isActive && (
+                        <motion.div
+                          className="absolute inset-0 rounded-lg bg-gradient-to-r from-primary-start/10 to-accent-purple/10"
+                          initial={{ opacity: 0, scale: 0.9 }}
+                          whileHover={{ opacity: 1, scale: 1 }}
+                          transition={{ duration: 0.2 }}
+                          style={{ zIndex: -1 }}
+                        />
+                      )}
+                    </Link>
+                  </motion.div>
+                );
+              })}
             </motion.div>
+
+            {/* Desktop CTA */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -74,14 +124,20 @@ const Navbar = () => {
             >
               <Link href="/contact">
                 <motion.button
-                  className="px-5 py-2 rounded-xl bg-gradient-to-r from-primary-start/10 to-accent-purple/10 border border-primary-start/30 text-primary-start font-semibold text-sm hover:from-primary-start hover:to-accent-purple hover:text-white transition-all duration-300"
-                  whileHover={{ scale: 1.05, y: -1 }}
+                  className={`px-5 py-2 rounded-xl font-semibold text-sm transition-all duration-300 ${
+                    isScrolled
+                      ? "bg-gradient-to-r from-primary-start to-accent-purple text-white shadow-md"
+                      : "bg-gradient-to-r from-primary-start/10 to-accent-purple/10 border border-primary-start/30 text-primary-start"
+                  }`}
+                  whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.98 }}
                 >
                   Get in Touch
                 </motion.button>
               </Link>
             </motion.div>
+
+            {/* Mobile menu button */}
             <motion.button
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -108,6 +164,8 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -115,26 +173,35 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="md:hidden fixed inset-x-0 top-16 bottom-0 z-[60] bg-white/75 backdrop-blur-2xl border-t border-white/30"
+            className="md:hidden fixed inset-x-0 top-16 bottom-0 z-[60] bg-white/75 backdrop-blur-2xl"
           >
             <div className="h-full flex flex-col justify-center px-8">
               <div className="space-y-1">
-                {navItems.map((item, index) => (
-                  <motion.div
-                    key={item.href}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3, delay: index * 0.04 }}
-                  >
-                    <Link
-                      href={item.href}
-                      onClick={() => setIsOpen(false)}
-                      className="block px-6 py-4 text-2xl font-medium text-gray-700 hover:text-primary-start transition-all duration-200 rounded-2xl hover:bg-white/50"
+                {navItems.map((item, index) => {
+                  const isActive = pathname === item.href;
+                  return (
+                    <motion.div
+                      key={item.href}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.3, delay: index * 0.04 }}
                     >
-                      {item.label}
-                    </Link>
-                  </motion.div>
-                ))}
+                      <Link
+                        href={item.href}
+                        onClick={() => setIsOpen(false)}
+                        className={`
+                          block px-6 py-3 sm:py-4 text-xl sm:text-2xl font-medium transition-all duration-200 rounded-2xl
+                          ${isActive 
+                            ? "text-primary-start bg-white/50" 
+                            : "text-gray-700 hover:text-primary-start hover:bg-white/50"
+                          }
+                        `}
+                      >
+                        {item.label}
+                      </Link>
+                    </motion.div>
+                  );
+                })}
               </div>
               <div className="pt-8 mt-4">
                 <Link href="/contact" onClick={() => setIsOpen(false)}>
